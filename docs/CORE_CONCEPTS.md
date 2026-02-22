@@ -79,3 +79,38 @@
 
 - Short definition: Measuring how much memory a program or dataset uses during execution.
 - Why it matters in UN/IATA/CERN context: Prevents failures in batch and research jobs that must run reliably on shared infrastructure.
+
+## Probability Distribution
+
+- Short definition: A rule or pattern that describes how likely different values or events are.
+- Why it matters in UN/IATA/CERN context: Helps teams model uncertainty in operations, logistics, and scientific measurements.
+
+## Standard Deviation
+
+- Short definition: A measure of how spread out values are around the average.
+- Why it matters in UN/IATA/CERN context: Quantifies variability in delays, demand, and instrument readings for planning and risk controls.
+
+## p-value
+
+- Short definition: A number showing how surprising the observed result would be if there were no real effect.
+- Why it matters in UN/IATA/CERN context: Supports evidence-based decisions, but must be interpreted carefully with domain context.
+
+## Statistical Significance
+
+- Short definition: A threshold-based label used when a p-value is below a chosen cutoff (for example, 0.05).
+- Why it matters in UN/IATA/CERN context: Can guide decisions, but should not replace operational significance, safety review, or scientific judgment.
+
+## Confidence Interval
+
+- Short definition: A range of plausible values for an unknown quantity, based on sample data and assumptions.
+- Why it matters in UN/IATA/CERN context: Communicates uncertainty more clearly than a single estimate in reports and audits.
+
+## Monte Carlo Simulation
+
+- Short definition: Repeated random simulation used to estimate uncertainty, risk, or outcome ranges.
+- Why it matters in UN/IATA/CERN context: Useful for planning under uncertainty, stress testing, and scientific scenario analysis.
+
+## Sampling Bias
+
+- Short definition: A distortion that happens when collected data does not fairly represent the real population.
+- Why it matters in UN/IATA/CERN context: Biased samples can produce unsafe, unfair, or scientifically invalid conclusions.
