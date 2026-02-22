@@ -54,3 +54,28 @@
 
 - Short definition: The ability to inspect and verify data, code, decisions, and model outputs after the fact.
 - Why it matters in UN/IATA/CERN context: External review, compliance checks, and scientific validation depend on complete traceable records.
+
+## Vectorization
+
+- Short definition: Doing the same calculation on many values at once instead of looping through each item in Python.
+- Why it matters in UN/IATA/CERN context: Faster processing supports timely analysis on large operational and scientific datasets.
+
+## Broadcasting
+
+- Short definition: A way to combine arrays of different shapes by automatically matching dimensions when possible.
+- Why it matters in UN/IATA/CERN context: It simplifies large-scale transformations while reducing manual code errors in data pipelines.
+
+## Generator
+
+- Short definition: A Python object that produces values one at a time instead of storing them all in memory.
+- Why it matters in UN/IATA/CERN context: Useful for memory-safe processing of logs, telemetry, and large streaming datasets.
+
+## Time Complexity
+
+- Short definition: A simple way to describe how runtime grows as the amount of data grows.
+- Why it matters in UN/IATA/CERN context: Helps teams choose scalable methods before workloads become too slow or costly.
+
+## Memory Profiling
+
+- Short definition: Measuring how much memory a program or dataset uses during execution.
+- Why it matters in UN/IATA/CERN context: Prevents failures in batch and research jobs that must run reliably on shared infrastructure.
