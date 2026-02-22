@@ -71,6 +71,10 @@ The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
 - `make ml-train`: run the config-driven ML training pipeline and save models/metrics/plots
 - `make ml-report`: print top-line ML metrics from `reports/ml_core/metrics.json`
 - `make ml-clean`: remove ML artifacts (`models/ml_core`, `reports/ml_core`)
+- `make ml-adv-train`: run advanced XGBoost training with imbalance handling, Optuna tuning, and SHAP reports
+- `make ml-adv-explain`: rerun advanced training/explainability pipeline (same command path)
+- `make ml-adv-clean`: remove advanced ML artifacts (`models/ml_advanced`, `reports/ml_advanced`)
+- `make ml-adv-all`: run advanced training + explainability + advanced ML tests
 - `make test`: run the pytest suite
 - `make clean`: remove common local test caches
 

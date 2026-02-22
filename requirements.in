@@ -29,3 +29,6 @@ pydantic
 python-dotenv
 rich
 psutil
+imbalanced-learn
+optuna
+shap

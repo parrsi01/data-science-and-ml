@@ -1,0 +1,51 @@
+{
+  "test_metrics": {
+    "accuracy": 0.979,
+    "precision": 0.4852941176470588,
+    "recall": 0.825,
+    "f1": 0.6111111111111112,
+    "roc_auc": 0.9866071428571428
+  },
+  "best_params": {
+    "max_depth": 3,
+    "learning_rate": 0.11506408247250169,
+    "n_estimators": 610,
+    "subsample": 0.8916028672163949,
+    "colsample_bytree": 0.9085081386743783,
+    "reg_lambda": 0.7404465173409036,
+    "min_child_weight": 8,
+    "gamma": 0.5793452976256486
+  },
+  "imbalance_decision": {
+    "use_smote": true,
+    "use_class_weights": false,
+    "scale_pos_weight": 49.0,
+    "positive_rate": 0.02,
+    "positives": 320,
+    "negatives": 15680,
+    "reason": "auto: moderate rare class and sufficient samples, using SMOTE on training split"
+  },
+  "tuning": {
+    "best_score": 0.5739278320023662,
+    "best_params": {
+      "max_depth": 3,
+      "learning_rate": 0.11506408247250169,
+      "n_estimators": 610,
+      "subsample": 0.8916028672163949,
+      "colsample_bytree": 0.9085081386743783,
+      "reg_lambda": 0.7404465173409036,
+      "min_child_weight": 8,
+      "gamma": 0.5793452976256486
+    },
+    "best_params_path": "reports/ml_advanced/optuna_best_params.json",
+    "study_summary_path": "reports/ml_advanced/optuna_study_summary.json",
+    "elapsed_seconds": 24.677361799003847
+  },
+  "dataset": {
+    "rows_total": 20000,
+    "rows_train": 16000,
+    "rows_test": 4000,
+    "positive_rate_train": 0.02,
+    "positive_rate_test": 0.02
+  }
+}

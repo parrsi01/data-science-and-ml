@@ -249,3 +249,28 @@
 
 - Short definition: A saved output from a workflow, such as a model file, metrics report, or plot.
 - Why it matters in UN/IATA/CERN context: Artifacts provide traceable evidence for review, deployment, and audits.
+
+## SMOTE
+
+- Short definition: A technique that creates synthetic minority-class samples to reduce class imbalance during training.
+- Why it matters in UN/IATA/CERN context: Can improve rare-event detection, but must be applied carefully to avoid unrealistic samples or leakage.
+
+## Hyperparameter Tuning
+
+- Short definition: Systematically searching for better model settings using validation data.
+- Why it matters in UN/IATA/CERN context: Improves model quality while keeping configuration choices traceable and reproducible.
+
+## Optuna
+
+- Short definition: A Python library that automates hyperparameter tuning by selecting and evaluating trial configurations.
+- Why it matters in UN/IATA/CERN context: Helps teams tune models efficiently while recording trial histories for audit and review.
+
+## SHAP
+
+- Short definition: A method for explaining model predictions by estimating each feature's contribution.
+- Why it matters in UN/IATA/CERN context: Supports interpretability requirements for high-stakes institutional models.
+
+## Data Leakage
+
+- Short definition: When information from outside the training process improperly influences model training or evaluation.
+- Why it matters in UN/IATA/CERN context: Leakage can make models look stronger than they really are, creating false confidence in decisions.

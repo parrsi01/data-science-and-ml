@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -52,6 +52,18 @@ ml-report:
 
 ml-clean:
 	rm -rf models/ml_core reports/ml_core
+
+ml-adv-train:
+	$(PY) -m src.ml_advanced.train_advanced --config configs/ml_advanced/config.yaml
+
+ml-adv-explain:
+	$(PY) -m src.ml_advanced.train_advanced --config configs/ml_advanced/config.yaml
+
+ml-adv-clean:
+	rm -rf models/ml_advanced reports/ml_advanced
+
+ml-adv-all: ml-adv-train
+	$(PY) -m pytest -q tests/ml_advanced/test_ml_advanced.py
 
 lint:
 	$(VENV)/bin/flake8 src tests

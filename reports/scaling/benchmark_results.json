@@ -5,79 +5,79 @@
     "cpu_cores": 6
   },
   "parameters": {
-    "n_rows": 300,
-    "chunk_size": 50,
+    "n_rows": 5000,
+    "chunk_size": 500,
     "n_workers": 2
   },
   "methods": {
     "chunking": {
       "label": "chunking",
-      "wall_time_seconds": 0.010615853003400844,
+      "wall_time_seconds": 0.10541721699701156,
       "memory_before": {
         "backend": "psutil",
-        "rss_bytes": 311214080,
-        "vms_bytes": 2374078464
+        "rss_bytes": 158146560,
+        "vms_bytes": 1889603584
       },
       "memory_after": {
         "backend": "psutil",
-        "rss_bytes": 311320576,
-        "vms_bytes": 2374078464
+        "rss_bytes": 161972224,
+        "vms_bytes": 1892749312
       },
       "result": {
         "backend": "pandas",
         "raw_csv": "/home/sp/cyber-course/projects/datascience/datasets/large_synthetic.csv",
         "processed_csv": "/home/sp/cyber-course/projects/datascience/datasets/large_synthetic_processed.csv",
-        "row_count": 300,
-        "chunk_size": 50
+        "row_count": 5000,
+        "chunk_size": 500
       },
-      "output_row_count": 300
+      "output_row_count": 5000
     },
     "multiprocessing": {
       "label": "multiprocessing",
-      "wall_time_seconds": 0.0014826699989498593,
+      "wall_time_seconds": 0.023992996000743005,
       "memory_before": {
         "backend": "psutil",
-        "rss_bytes": 311320576,
-        "vms_bytes": 2374078464
+        "rss_bytes": 161972224,
+        "vms_bytes": 1892749312
       },
       "memory_after": {
         "backend": "psutil",
-        "rss_bytes": 311320576,
-        "vms_bytes": 2374078464
+        "rss_bytes": 161976320,
+        "vms_bytes": 1892749312
       },
       "result": {
         "method": "multiprocessing",
-        "elapsed_seconds": 0.00031287599995266646,
-        "rows_processed": 300,
+        "elapsed_seconds": 0.004492907995881978,
+        "rows_processed": 5000,
         "workers_used": 1,
         "execution_mode": "sequential-fallback",
         "input_csv": "/home/sp/cyber-course/projects/datascience/datasets/large_synthetic.csv",
         "output_csv": "/home/sp/cyber-course/projects/datascience/datasets/large_synthetic_processed_mp.csv"
       },
-      "output_row_count": 300
+      "output_row_count": 5000
     },
     "dask": {
       "label": "dask",
-      "wall_time_seconds": 0.015570155002933461,
+      "wall_time_seconds": 0.0574223909934517,
       "memory_before": {
         "backend": "psutil",
-        "rss_bytes": 311320576,
-        "vms_bytes": 2374078464
+        "rss_bytes": 161976320,
+        "vms_bytes": 1892749312
       },
       "memory_after": {
         "backend": "psutil",
-        "rss_bytes": 311644160,
-        "vms_bytes": 2374078464
+        "rss_bytes": 169918464,
+        "vms_bytes": 1970798592
       },
       "result": {
         "method": "dask",
         "backend": "dask",
         "output_parquet": "/home/sp/cyber-course/projects/datascience/datasets/large_synthetic_processed.parquet",
-        "row_count": 300,
+        "row_count": 5000,
         "why_parquet": "Parquet is a columnar format that is typically smaller and faster for analytics, especially when reading only some columns.",
         "when_prefer_parquet": "Prefer Parquet for repeated analytical queries, large datasets, and typed column storage; prefer CSV for quick interchange and manual inspection."
       },
-      "output_row_count": 300
+      "output_row_count": 5000
     }
   },
   "artifacts": {
