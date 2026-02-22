@@ -1,0 +1,5 @@
+region,demand_units,priority_score,cost_per_unit,risk_index,allocated_units,unmet_demand,allocation_ratio_total,demand_fill_rate,total_cost
+Africa,18517,5,22.75,0.618,2400.0,16117.0,0.3,0.12961062807150187,54600.0
+SouthAmerica,15931,5,16.8,0.569,5600.0,10331.0,0.7,0.3515159123721047,94080.0
+Asia,14957,3,17.46,0.573,0.0,14957.0,0.0,0.0,0.0
+MiddleEast,13267,2,18.14,0.366,0.0,13267.0,0.0,0.0,0.0

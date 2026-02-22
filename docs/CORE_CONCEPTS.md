@@ -309,3 +309,33 @@
 
 - Short definition: A subset of training-era data reserved for model selection and threshold tuning before final test evaluation.
 - Why it matters in UN/IATA/CERN context: Prevents test-set leakage and supports audit-ready model selection decisions.
+
+## Linear Programming
+
+- Short definition: A mathematical optimization method that finds the best values for decision variables while obeying linear rules.
+- Why it matters in UN/IATA/CERN context: Useful for transparent planning when budgets, capacity, and policy constraints must be enforced.
+
+## Objective Function
+
+- Short definition: The formula the optimization model tries to minimize or maximize.
+- Why it matters in UN/IATA/CERN context: Makes trade-offs explicit so allocation decisions can be reviewed and justified.
+
+## Constraint
+
+- Short definition: A hard condition that every valid solution must satisfy.
+- Why it matters in UN/IATA/CERN context: Encodes policy limits, resource caps, and operational realities directly into planning models.
+
+## Feasible Region
+
+- Short definition: The set of all possible solutions that satisfy every constraint.
+- Why it matters in UN/IATA/CERN context: Helps teams understand what is possible before choosing the best plan.
+
+## Sensitivity Analysis
+
+- Short definition: Re-running a model with changed assumptions to see how results move.
+- Why it matters in UN/IATA/CERN context: Shows whether plans remain robust when budgets, priorities, or risks change.
+
+## Fairness Metric
+
+- Short definition: A measure used to compare how outcomes are distributed across groups or regions.
+- Why it matters in UN/IATA/CERN context: Supports review of equity and under-service risks in institutional allocation decisions.

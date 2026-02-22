@@ -1,0 +1,5 @@
+region,demand_units,priority_score,cost_per_unit,risk_index
+Africa,18517,5,22.75,0.618
+SouthAmerica,15931,5,16.8,0.569
+Asia,14957,3,17.46,0.573
+MiddleEast,13267,2,18.14,0.366

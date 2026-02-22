@@ -1,0 +1,20 @@
+{
+  "config_path": "/tmp/pytest-of-sp/pytest-23/test_project_runner_writes_sum0/humanitarian.yaml",
+  "demand_dataset_path": "datasets/humanitarian_demand.csv",
+  "allocation_csv_path": "reports/projects/humanitarian_optimization/allocation_results.csv",
+  "sensitivity_artifacts": {
+    "json": "reports/projects/humanitarian_optimization/sensitivity_analysis.json",
+    "budget_plot_png": "reports/projects/humanitarian_optimization/budget_vs_unmet_demand.png",
+    "weight_plot_png": "reports/projects/humanitarian_optimization/weight_vs_priority_coverage.png"
+  },
+  "executive_summary_md": "reports/projects/humanitarian_optimization/executive_summary.md",
+  "executive_summary": {
+    "total_demand": 62672.0,
+    "total_allocated": 8000.0,
+    "unmet_demand_pct": 0.8723512892519786,
+    "most_underserved_region": "Asia",
+    "most_underserved_fill_rate": 0.0,
+    "budget_utilization_pct": 0.7434,
+    "priority_coverage_share": 1.0
+  }
+}

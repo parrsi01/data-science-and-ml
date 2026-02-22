@@ -32,3 +32,5 @@ psutil
 imbalanced-learn
 optuna
 shap
+pulp
+pyyaml
