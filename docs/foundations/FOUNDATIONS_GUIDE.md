@@ -49,3 +49,23 @@ dtype optimization chooses the smallest practical data type (for example `int16`
 5. Run `python3 -m pytest -q tests/foundations/test_foundations.py`
 6. Review generated file: `datasets/processed_aviation_sample.csv`
 7. Commit and push changes with a clear message
+
+## JIRA-Style Ticket Examples
+
+### FOUND-101: Add Python Performance and Memory Demos
+
+- Type: Story
+- Goal: Provide testable examples covering loops vs comprehensions, memory usage, and logging for training new analysts.
+- Acceptance Criteria:
+  - `python_core.py` includes performance timing and memory demo functions
+  - `logs/foundations.log` is produced during demo runs
+  - Unit tests cover dataset class behavior
+
+### FOUND-102: Add Numerical Computing Dataset Processing Example
+
+- Type: Task
+- Goal: Demonstrate vectorization concepts and tabular cleaning/export workflow with offline-safe fallback.
+- Acceptance Criteria:
+  - Synthetic aviation dataset generation included
+  - Cleaned dataset exported to `datasets/processed_aviation_sample.csv`
+  - Tests validate export and matrix dimensions

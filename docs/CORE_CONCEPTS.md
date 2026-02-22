@@ -179,3 +179,33 @@
 
 - Short definition: A file format where each line is a separate JSON object.
 - Why it matters in UN/IATA/CERN context: Supports machine-readable logging, easy streaming, and audit-friendly pipeline records.
+
+## Out-of-core processing
+
+- Short definition: Processing data in smaller chunks instead of loading the full dataset into memory at once.
+- Why it matters in UN/IATA/CERN context: Enables large analytical workloads to run reliably on limited or shared infrastructure.
+
+## Determinism
+
+- Short definition: Getting the same output every time when the same input, code, and settings are used.
+- Why it matters in UN/IATA/CERN context: Deterministic pipelines improve reproducibility, audits, and incident debugging.
+
+## Multiprocessing
+
+- Short definition: Using multiple CPU processes in parallel to speed up independent tasks.
+- Why it matters in UN/IATA/CERN context: Helps scale data transformations and simulations when timelines are tight.
+
+## Dask
+
+- Short definition: A Python library for parallel and larger-than-memory data processing.
+- Why it matters in UN/IATA/CERN context: Supports scalable data workflows across research and operations without rewriting everything from scratch.
+
+## Parquet
+
+- Short definition: A compressed columnar data file format optimized for analytics.
+- Why it matters in UN/IATA/CERN context: Reduces storage costs and speeds up repeated analytical queries on large datasets.
+
+## Profiling
+
+- Short definition: Measuring runtime and memory usage to find slow or inefficient code.
+- Why it matters in UN/IATA/CERN context: Helps teams tune performance and avoid failures in production and scientific workloads.

@@ -36,3 +36,23 @@ JSON Lines (`.jsonl`) stores one JSON object per line. It is easy to stream, app
 7. Build a CLI quality gate runner with thresholds and non-zero exit on failure
 8. Add tests for invalid-row detection, metrics keys, and gate failure
 9. Run `python3 -m pytest -q tests/data_quality/test_quality_gate.py`
+
+## JIRA-Style Ticket Examples
+
+### DQ-101: Add Structured JSONL Validation Logging
+
+- Type: Story
+- Goal: Provide machine-readable validation events for institutional audit trails.
+- Acceptance Criteria:
+  - JSONL logs written to `logs/data_quality.jsonl`
+  - Log fields include timestamp, level, module, event, dataset_name, row_count
+  - Validation summary events emitted for each dataset
+
+### DQ-102: Implement Quality Gate Threshold Enforcement and Reports
+
+- Type: Task
+- Goal: Block pipeline progression when schema/duplicate thresholds exceed policy.
+- Acceptance Criteria:
+  - Per-dataset JSON + invalid-row CSV artifacts are written
+  - Aggregated summary report is written
+  - CLI exits non-zero on threshold failure

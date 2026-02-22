@@ -32,3 +32,23 @@ Indexes make frequent lookups and filters much faster by helping the database fi
 6. Run `make ingest` to load synthetic datasets
 7. Run `make queries` to review example outputs
 8. Run `python3 -m pytest -q tests/data_engineering/test_pipeline.py`
+
+## JIRA-Style Ticket Examples
+
+### DE-101: Build Institutional PostgreSQL Schema and Validation Baseline
+
+- Type: Story
+- Goal: Establish audited schema + constraints for flights, humanitarian shipments, and CERN-style events.
+- Acceptance Criteria:
+  - `scripts/sql/001_create_schema.sql` creates all tables and indexes
+  - Validation module enforces required columns, types, and ranges
+  - Tests skip gracefully when DB is unavailable
+
+### DE-102: Add Reproducible Ingestion and Query Examples
+
+- Type: Task
+- Goal: Generate synthetic data, ingest in batches, and provide institution-style query examples (DB + offline reference fallback).
+- Acceptance Criteria:
+  - Ingestion outputs row counts by table
+  - Query examples include delay, backlog, rare event, and quality checks
+  - Offline query fallback is runnable for reference work

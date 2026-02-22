@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze db-init ingest queries quality all test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -31,6 +31,18 @@ quality:
 	PYTHONPATH=src $(PYTHON) -m data_quality.run_quality_gate
 
 all: db-init ingest quality test
+
+scale-generate:
+	PYTHONPATH=src $(PYTHON) -m scaling.chunking
+
+scale-mp:
+	PYTHONPATH=src $(PYTHON) -m scaling.multiprocessing_jobs
+
+scale-dask:
+	PYTHONPATH=src $(PYTHON) -m scaling.dask_jobs
+
+scale-bench:
+	PYTHONPATH=src $(PYTHON) -m scaling.benchmark
 
 lint:
 	$(VENV)/bin/flake8 src tests

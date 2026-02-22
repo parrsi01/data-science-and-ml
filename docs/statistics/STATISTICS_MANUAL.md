@@ -36,3 +36,23 @@ UN, IATA, and CERN-style environments need repeatable methods because results ma
 6. Add pytest tests for numerical correctness and output files
 7. Run `python3 -m pytest -q tests/statistics/test_statistics.py`
 8. Commit and push with a descriptive message
+
+## JIRA-Style Ticket Examples
+
+### STAT-101: Implement Core Distribution Utilities and Synthetic Delays
+
+- Type: Story
+- Goal: Provide reproducible Normal/Binomial/Poisson utilities and a 10,000-row synthetic delay generator for institutional analytics training.
+- Acceptance Criteria:
+  - Normal PDF/CDF implemented and visual output saved
+  - Binomial and Poisson examples included
+  - Synthetic delay summary reproducible with fixed seed
+
+### STAT-102: Add Hypothesis Testing and Monte Carlo Risk Demo
+
+- Type: Task
+- Goal: Add interpretable statistical tests and simulation-based uncertainty examples for aviation/scientific scenarios.
+- Acceptance Criteria:
+  - Welch t-test and chi-square test return p-values
+  - Confidence interval helper returns sensible bounds
+  - Monte Carlo histogram saved to `reports/monte_carlo_simulation.png`

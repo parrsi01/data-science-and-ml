@@ -64,6 +64,10 @@ The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
 - `make queries`: run institution-style SQL query examples and print outputs
 - `make quality`: run institutional data quality gates, JSONL logging, and quality reports
 - `make all`: run `db-init`, `ingest`, `quality`, and `test` in sequence
+- `make scale-generate`: generate and chunk-process a large synthetic dataset
+- `make scale-mp`: run deterministic multiprocessing CSV processing
+- `make scale-dask`: run Dask processing (or offline-safe fallback) and write parquet output
+- `make scale-bench`: run scaling benchmark and write JSON/Markdown reports
 - `make test`: run the pytest suite
 - `make clean`: remove common local test caches
 
