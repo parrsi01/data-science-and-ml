@@ -144,3 +144,38 @@
 
 - Short definition: Checks that data has the right columns, types, and value ranges before use.
 - Why it matters in UN/IATA/CERN context: Prevents bad records from contaminating mission-critical analysis and decisions.
+
+## Data Quality
+
+- Short definition: A measure of whether data is accurate enough, complete enough, and consistent enough for its intended use.
+- Why it matters in UN/IATA/CERN context: Low-quality data can produce unsafe operational decisions, weak humanitarian planning, or invalid scientific conclusions.
+
+## Schema Validation
+
+- Short definition: Checking that each row matches the required columns, types, and basic constraints.
+- Why it matters in UN/IATA/CERN context: Enforces consistent structure across teams and systems before analysis or reporting begins.
+
+## Domain Rule
+
+- Short definition: A business or scientific rule that reflects real-world logic (for example, departure and arrival airports should differ).
+- Why it matters in UN/IATA/CERN context: Domain rules catch errors that generic type checks cannot detect.
+
+## Outlier
+
+- Short definition: A value that is unusually far from most other values in the dataset.
+- Why it matters in UN/IATA/CERN context: Outliers may indicate important rare events, sensor issues, or data entry problems.
+
+## Drift (basic)
+
+- Short definition: A change in data patterns over time, such as shifts in averages or variability.
+- Why it matters in UN/IATA/CERN context: Drift can reduce reliability of analytics and models unless monitored and reviewed.
+
+## Quality Gate
+
+- Short definition: A pass/fail checkpoint that blocks data from progressing when quality thresholds are not met.
+- Why it matters in UN/IATA/CERN context: Prevents bad data from entering mission-critical reporting and decision pipelines.
+
+## JSON Lines (JSONL)
+
+- Short definition: A file format where each line is a separate JSON object.
+- Why it matters in UN/IATA/CERN context: Supports machine-readable logging, easy streaming, and audit-friendly pipeline records.

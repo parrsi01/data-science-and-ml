@@ -1,0 +1,30 @@
+{
+  "dataset_name": "cern_events",
+  "row_counts": {
+    "total": 1,
+    "valid": 1,
+    "schema_invalid": 0,
+    "domain_invalid": 0
+  },
+  "missing_rate_per_column": {
+    "detector": 0.0,
+    "energy_gev": 0.0,
+    "event_id": 0.0,
+    "is_rare_event": 0.0,
+    "recorded_at": 0.0
+  },
+  "duplicate_rate": 0.0,
+  "outlier_rate_per_numeric_column": {
+    "energy_gev": 0.0
+  },
+  "schema_violation_rate": 0.0,
+  "domain_violation_rate": 0.0,
+  "drift_snapshot": {
+    "energy_gev": {
+      "mean": 100.0,
+      "std": 0.0,
+      "min": 100.0,
+      "max": 100.0
+    }
+  }
+}

@@ -62,6 +62,8 @@ The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
 - `make db-init`: run `scripts/sql/001_create_schema.sql` against `DATABASE_URL`
 - `make ingest`: generate and ingest synthetic records into PostgreSQL
 - `make queries`: run institution-style SQL query examples and print outputs
+- `make quality`: run institutional data quality gates, JSONL logging, and quality reports
+- `make all`: run `db-init`, `ingest`, `quality`, and `test` in sequence
 - `make test`: run the pytest suite
 - `make clean`: remove common local test caches
 

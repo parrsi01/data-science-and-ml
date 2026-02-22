@@ -1,0 +1,38 @@
+{
+  "dataset_name": "humanitarian_shipments",
+  "row_counts": {
+    "total": 1,
+    "valid": 1,
+    "schema_invalid": 0,
+    "domain_invalid": 0
+  },
+  "missing_rate_per_column": {
+    "item_type": 0.0,
+    "priority": 0.0,
+    "quantity": 0.0,
+    "region": 0.0,
+    "shipment_id": 0.0,
+    "status": 0.0
+  },
+  "duplicate_rate": 0.0,
+  "outlier_rate_per_numeric_column": {
+    "priority": 0.0,
+    "quantity": 0.0
+  },
+  "schema_violation_rate": 0.0,
+  "domain_violation_rate": 0.0,
+  "drift_snapshot": {
+    "priority": {
+      "mean": 3.0,
+      "std": 0.0,
+      "min": 3.0,
+      "max": 3.0
+    },
+    "quantity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  }
+}

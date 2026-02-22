@@ -1,0 +1,2 @@
+_validation_error,actual_dep,arr_airport,delay_minutes,dep_airport,flight_id,fuel_consumption_kg,passenger_count,scheduled_dep
+dep_airport: min_length=3,2026-01-01 10:55:00,CDG,0,AB,FL002,6500.0,-1,2026-01-01 11:00:00

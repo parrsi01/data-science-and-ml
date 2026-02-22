@@ -1,0 +1,47 @@
+{
+  "dataset_name": "flights",
+  "row_counts": {
+    "total": 3,
+    "valid": 2,
+    "schema_invalid": 1,
+    "domain_invalid": 0
+  },
+  "missing_rate_per_column": {
+    "actual_dep": 0.0,
+    "arr_airport": 0.0,
+    "delay_minutes": 0.0,
+    "dep_airport": 0.0,
+    "flight_id": 0.0,
+    "fuel_consumption_kg": 0.0,
+    "passenger_count": 0.0,
+    "scheduled_dep": 0.0
+  },
+  "duplicate_rate": 0.5,
+  "outlier_rate_per_numeric_column": {
+    "delay_minutes": 0.0,
+    "fuel_consumption_kg": 0.0,
+    "passenger_count": 0.0
+  },
+  "schema_violation_rate": 0.3333333333333333,
+  "domain_violation_rate": 0.0,
+  "drift_snapshot": {
+    "delay_minutes": {
+      "mean": 5.0,
+      "std": 0.0,
+      "min": 5.0,
+      "max": 5.0
+    },
+    "fuel_consumption_kg": {
+      "mean": 7200.0,
+      "std": 0.0,
+      "min": 7200.0,
+      "max": 7200.0
+    },
+    "passenger_count": {
+      "mean": 180.0,
+      "std": 0.0,
+      "min": 180.0,
+      "max": 180.0
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "gate_thresholds": {
+    "schema_violation_rate": 0.01,
+    "duplicate_rate": 0.001
+  },
+  "datasets": {
+    "flights": {
+      "dataset_name": "flights",
+      "row_counts": {
+        "total": 3,
+        "valid": 2,
+        "schema_invalid": 1,
+        "domain_invalid": 0
+      },
+      "missing_rate_per_column": {
+        "actual_dep": 0.0,
+        "arr_airport": 0.0,
+        "delay_minutes": 0.0,
+        "dep_airport": 0.0,
+        "flight_id": 0.0,
+        "fuel_consumption_kg": 0.0,
+        "passenger_count": 0.0,
+        "scheduled_dep": 0.0
+      },
+      "duplicate_rate": 0.5,
+      "outlier_rate_per_numeric_column": {
+        "delay_minutes": 0.0,
+        "fuel_consumption_kg": 0.0,
+        "passenger_count": 0.0
+      },
+      "schema_violation_rate": 0.3333333333333333,
+      "domain_violation_rate": 0.0,
+      "drift_snapshot": {
+        "delay_minutes": {
+          "mean": 5.0,
+          "std": 0.0,
+          "min": 5.0,
+          "max": 5.0
+        },
+        "fuel_consumption_kg": {
+          "mean": 7200.0,
+          "std": 0.0,
+          "min": 7200.0,
+          "max": 7200.0
+        },
+        "passenger_count": {
+          "mean": 180.0,
+          "std": 0.0,
+          "min": 180.0,
+          "max": 180.0
+        }
+      },
+      "artifacts": {
+        "quality_report_json": "/home/sp/cyber-course/projects/datascience/reports/data_quality/flights_quality_report.json",
+        "invalid_rows_csv": "/home/sp/cyber-course/projects/datascience/reports/data_quality/flights_invalid_rows.csv"
+      }
+    },
+    "humanitarian_shipments": {
+      "dataset_name": "humanitarian_shipments",
+      "row_counts": {
+        "total": 1,
+        "valid": 1,
+        "schema_invalid": 0,
+        "domain_invalid": 0
+      },
+      "missing_rate_per_column": {
+        "item_type": 0.0,
+        "priority": 0.0,
+        "quantity": 0.0,
+        "region": 0.0,
+        "shipment_id": 0.0,
+        "status": 0.0
+      },
+      "duplicate_rate": 0.0,
+      "outlier_rate_per_numeric_column": {
+        "priority": 0.0,
+        "quantity": 0.0
+      },
+      "schema_violation_rate": 0.0,
+      "domain_violation_rate": 0.0,
+      "drift_snapshot": {
+        "priority": {
+          "mean": 3.0,
+          "std": 0.0,
+          "min": 3.0,
+          "max": 3.0
+        },
+        "quantity": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "artifacts": {
+        "quality_report_json": "/home/sp/cyber-course/projects/datascience/reports/data_quality/humanitarian_shipments_quality_report.json",
+        "invalid_rows_csv": "/home/sp/cyber-course/projects/datascience/reports/data_quality/humanitarian_shipments_invalid_rows.csv"
+      }
+    },
+    "cern_events": {
+      "dataset_name": "cern_events",
+      "row_counts": {
+        "total": 1,
+        "valid": 1,
+        "schema_invalid": 0,
+        "domain_invalid": 0
+      },
+      "missing_rate_per_column": {
+        "detector": 0.0,
+        "energy_gev": 0.0,
+        "event_id": 0.0,
+        "is_rare_event": 0.0,
+        "recorded_at": 0.0
+      },
+      "duplicate_rate": 0.0,
+      "outlier_rate_per_numeric_column": {
+        "energy_gev": 0.0
+      },
+      "schema_violation_rate": 0.0,
+      "domain_violation_rate": 0.0,
+      "drift_snapshot": {
+        "energy_gev": {
+          "mean": 100.0,
+          "std": 0.0,
+          "min": 100.0,
+          "max": 100.0
+        }
+      },
+      "artifacts": {
+        "quality_report_json": "/home/sp/cyber-course/projects/datascience/reports/data_quality/cern_events_quality_report.json",
+        "invalid_rows_csv": "/home/sp/cyber-course/projects/datascience/reports/data_quality/cern_events_invalid_rows.csv"
+      }
+    }
+  },
+  "failed_datasets": [
+    "flights"
+  ],
+  "passed": false
+}
