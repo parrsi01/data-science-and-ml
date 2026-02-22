@@ -2,11 +2,11 @@
 
 ## Top-Line Outcomes
 
-- Total demand (units): 62,672
-- Total allocated (units): 8,000
-- Unmet demand (%): 87.24%
-- Most under-served region: Asia (fill rate 0.00%)
-- Budget utilization (%): 74.34%
+- Total demand (units): 48,234
+- Total allocated (units): 41,898
+- Unmet demand (%): 13.14%
+- Most under-served region: Asia (fill rate 21.12%)
+- Budget utilization (%): 100.00%
 
 ## Artifacts
 

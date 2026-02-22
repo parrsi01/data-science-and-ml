@@ -1,83 +1,83 @@
 {
   "budget_sensitivity": [
     {
-      "budget": 100000.0,
-      "total_unmet_demand": 56732.93929,
-      "fairness_std_allocation_ratio": 0.4007301509522652,
-      "priority_coverage_share": 0.9429100447770975,
-      "budget_utilization_pct": 0.9999999999660001
+      "budget": 500000.0,
+      "total_unmet_demand": 24653.572500000002,
+      "fairness_std_allocation_ratio": 0.37725845009328834,
+      "priority_coverage_share": 1.0,
+      "budget_utilization_pct": 1.0000000015
     },
     {
-      "budget": 150000.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "budget": 750000.0,
+      "total_unmet_demand": 14484.298999999999,
+      "fairness_std_allocation_ratio": 0.24575963632676337,
       "priority_coverage_share": 1.0,
-      "budget_utilization_pct": 0.9912
+      "budget_utilization_pct": 1.0000000012799999
     },
     {
-      "budget": 200000.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "budget": 1000000.0,
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
       "priority_coverage_share": 1.0,
-      "budget_utilization_pct": 0.7434
+      "budget_utilization_pct": 0.9999999985229999
     },
     {
-      "budget": 250000.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "budget": 1250000.0,
+      "total_unmet_demand": 0.0,
+      "fairness_std_allocation_ratio": 0.11078881546239243,
       "priority_coverage_share": 1.0,
-      "budget_utilization_pct": 0.59472
+      "budget_utilization_pct": 0.988718568
     },
     {
-      "budget": 300000.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "budget": 1500000.0,
+      "total_unmet_demand": 0.0,
+      "fairness_std_allocation_ratio": 0.11078881546239243,
       "priority_coverage_share": 1.0,
-      "budget_utilization_pct": 0.4956
+      "budget_utilization_pct": 0.8239321399999999
     }
   ],
   "priority_weight_sensitivity": [
     {
       "priority_weight": 0.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
-      "priority_coverage_share": 0.7,
-      "objective_value": 54672.0
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
+      "priority_coverage_share": 1.0,
+      "objective_value": 6336.2399
     },
     {
       "priority_weight": 0.25,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
       "priority_coverage_share": 1.0,
-      "objective_value": 52672.0
+      "objective_value": -3626.650125
     },
     {
       "priority_weight": 0.5,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
       "priority_coverage_share": 1.0,
-      "objective_value": 50672.0
+      "objective_value": -13589.540149999999
     },
     {
       "priority_weight": 1.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
       "priority_coverage_share": 1.0,
-      "objective_value": 46672.0
+      "objective_value": -33515.3202
     },
     {
       "priority_weight": 2.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
       "priority_coverage_share": 1.0,
-      "objective_value": 38672.0
+      "objective_value": -73366.8803
     },
     {
       "priority_weight": 4.0,
-      "total_unmet_demand": 54672.0,
-      "fairness_std_allocation_ratio": 0.2872281323269014,
+      "total_unmet_demand": 6336.2399000000005,
+      "fairness_std_allocation_ratio": 0.16679537492249108,
       "priority_coverage_share": 1.0,
-      "objective_value": 22672.0
+      "objective_value": -153070.0005
     }
   ]
 }

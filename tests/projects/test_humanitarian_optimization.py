@@ -60,7 +60,11 @@ def test_sensitivity_outputs_exist(tmp_path: Path) -> None:
 def test_project_runner_writes_summary_artifacts(tmp_path: Path) -> None:
     cfg_path = tmp_path / "humanitarian.yaml"
     cfg_path.write_text(yaml.safe_dump(_small_config()), encoding="utf-8")
-    result = run_project(cfg_path)
+    result = run_project(
+        cfg_path,
+        report_dir=tmp_path / "reports",
+        demand_output_path=tmp_path / "datasets" / "humanitarian_demand.csv",
+    )
     assert Path(result["demand_dataset_path"]).exists()
     assert Path(result["allocation_csv_path"]).exists()
     assert Path(result["sensitivity_artifacts"]["json"]).exists()

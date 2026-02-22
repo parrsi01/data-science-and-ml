@@ -85,14 +85,19 @@ def _write_executive_report(
     return str(md_path)
 
 
-def run_project(config_path: str | Path) -> dict[str, Any]:
+def run_project(
+    config_path: str | Path,
+    *,
+    report_dir: str | Path | None = None,
+    demand_output_path: str | Path = "datasets/humanitarian_demand.csv",
+) -> dict[str, Any]:
     """Run demand generation, optimization, sensitivity analysis, and reporting."""
 
     config = load_config(config_path)
-    report_dir = DEFAULT_REPORT_DIR
+    report_dir = Path(report_dir) if report_dir is not None else DEFAULT_REPORT_DIR
     report_dir.mkdir(parents=True, exist_ok=True)
 
-    demand_df = generate_regional_demand(config)
+    demand_df = generate_regional_demand(config, output_path=demand_output_path)
     solve_result = solve_humanitarian_allocation(demand_df, config, report_dir=report_dir)
     allocation_df = solve_result["allocation_table"]
     summary = solve_result["summary"]
@@ -113,7 +118,7 @@ def run_project(config_path: str | Path) -> dict[str, Any]:
     ).iloc[0]
     payload: dict[str, Any] = {
         "config_path": str(config_path),
-        "demand_dataset_path": "datasets/humanitarian_demand.csv",
+        "demand_dataset_path": str(demand_output_path),
         "allocation_csv_path": solve_result.get("allocation_csv_path"),
         "sensitivity_artifacts": sensitivity_artifacts,
         "executive_summary_md": exec_report_path,
@@ -157,4 +162,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
