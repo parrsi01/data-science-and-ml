@@ -1,0 +1,268 @@
+{
+  "round": 2,
+  "aggregate_metrics": {
+    "accuracy": 0.9984,
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1": 0.9333333333333333,
+    "roc_auc": 0.9491869918699187
+  },
+  "traffic_metrics": {
+    "bytes_sent_total": 1392.0,
+    "avg_latency_ms": 15.155595989997432,
+    "packet_loss_mean": 0.027561144724605913,
+    "energy_total": 21.571101860952187,
+    "n_events": 5.0
+  },
+  "agent_metrics": {
+    "0": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": NaN,
+      "positive_rate_val": 1.0,
+      "scale_pos_weight": 0.018518518518518517,
+      "feature_importance_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_importance_feature_order": [
+        "f00",
+        "f01",
+        "f02",
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f07",
+        "f08",
+        "f09",
+        "proto",
+        "service",
+        "segment"
+      ],
+      "best_iteration": -1,
+      "rows_train": 54,
+      "rows_val": 13
+    },
+    "1": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": NaN,
+      "positive_rate_val": 1.0,
+      "scale_pos_weight": 0.16666666666666666,
+      "feature_importance_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_importance_feature_order": [
+        "f00",
+        "f01",
+        "f02",
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f07",
+        "f08",
+        "f09",
+        "proto",
+        "service",
+        "segment"
+      ],
+      "best_iteration": -1,
+      "rows_train": 6,
+      "rows_val": 2
+    },
+    "2": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": NaN,
+      "positive_rate_val": 1.0,
+      "scale_pos_weight": 0.16666666666666666,
+      "feature_importance_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_importance_feature_order": [
+        "f00",
+        "f01",
+        "f02",
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f07",
+        "f08",
+        "f09",
+        "proto",
+        "service",
+        "segment"
+      ],
+      "best_iteration": -1,
+      "rows_train": 6,
+      "rows_val": 2
+    },
+    "3": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": NaN,
+      "positive_rate_val": 1.0,
+      "scale_pos_weight": 0.07692307692307693,
+      "feature_importance_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_importance_feature_order": [
+        "f00",
+        "f01",
+        "f02",
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f07",
+        "f08",
+        "f09",
+        "proto",
+        "service",
+        "segment"
+      ],
+      "best_iteration": -1,
+      "rows_train": 13,
+      "rows_val": 3
+    },
+    "4": {
+      "accuracy": 0.992,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "roc_auc": 0.9491869918699187,
+      "positive_rate_val": 0.016,
+      "scale_pos_weight": 1.0,
+      "feature_importance_vector": [
+        0.31111910939216614,
+        0.1438831388950348,
+        0.03583541139960289,
+        0.0,
+        0.0,
+        0.0,
+        0.01558840461075306,
+        0.017836853861808777,
+        0.0,
+        0.005242041777819395,
+        0.0,
+        0.06058930978178978,
+        0.0
+      ],
+      "feature_importance_feature_order": [
+        "f00",
+        "f01",
+        "f02",
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f07",
+        "f08",
+        "f09",
+        "proto",
+        "service",
+        "segment"
+      ],
+      "best_iteration": 59,
+      "rows_train": 986,
+      "rows_val": 125
+    }
+  },
+  "agent_rewards": {
+    "0": {
+      "reward": -0.02286294994172392,
+      "f1_improvement": 0.0,
+      "communication_penalty": 0.0169921875,
+      "energy_penalty": 0.005870762441723925
+    },
+    "1": {
+      "reward": -0.009319725665633678,
+      "f1_improvement": 0.0,
+      "communication_penalty": 0.00849609375,
+      "energy_penalty": 0.0008236319156336787
+    },
+    "2": {
+      "reward": -0.009320138458062522,
+      "f1_improvement": 0.0,
+      "communication_penalty": 0.00849609375,
+      "energy_penalty": 0.0008240447080625226
+    },
+    "3": {
+      "reward": -0.010013298252984729,
+      "f1_improvement": 0.0,
+      "communication_penalty": 0.00849609375,
+      "energy_penalty": 0.0015172045029847297
+    },
+    "4": {
+      "reward": -0.1073159594863561,
+      "f1_improvement": 0.0,
+      "communication_penalty": 0.00849609375,
+      "energy_penalty": 0.0988198657363561
+    }
+  },
+  "agent_epsilons": {
+    "0": 0.9603999999999999,
+    "1": 0.9603999999999999,
+    "2": 0.9603999999999999,
+    "3": 0.9603999999999999,
+    "4": 0.9603999999999999
+  }
+}

@@ -10,6 +10,24 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 from xgboost import XGBClassifier
 
 
+class _ConstantProbModel:
+    """Deterministic fallback model for single-class local training partitions."""
+
+    def __init__(self, constant_label: int) -> None:
+        self.constant_label = int(constant_label)
+        self.feature_importances_ = np.array([], dtype=float)
+        self.best_iteration = -1
+
+    def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
+        n = len(X)
+        if self.constant_label == 1:
+            return np.column_stack([np.zeros(n, dtype=float), np.ones(n, dtype=float)])
+        return np.column_stack([np.ones(n, dtype=float), np.zeros(n, dtype=float)])
+
+    def predict(self, X: pd.DataFrame) -> np.ndarray:
+        return np.full(len(X), self.constant_label, dtype=int)
+
+
 def _apply_feature_weights(
     X: pd.DataFrame,
     feature_weights: dict[str, float] | None,
@@ -64,7 +82,7 @@ def train_local_xgb(
     seed: int,
     raw_feature_order: list[str],
     feature_weights: dict[str, float] | None = None,
-) -> tuple[XGBClassifier, dict[str, Any]]:
+) -> tuple[Any, dict[str, Any]]:
     """Train a local XGBoost classifier and return model + metrics."""
 
     xgb_cfg = config["xgboost"]
@@ -76,30 +94,39 @@ def train_local_xgb(
     neg = max(int((y_train == 0).sum()), 1)
     scale_pos_weight = neg / pos
 
-    model = XGBClassifier(
-        n_estimators=int(xgb_cfg["n_estimators"]),
-        max_depth=int(xgb_cfg["max_depth"]),
-        learning_rate=float(xgb_cfg["learning_rate"]),
-        subsample=float(xgb_cfg["subsample"]),
-        colsample_bytree=float(xgb_cfg["colsample_bytree"]),
-        reg_lambda=float(xgb_cfg["reg_lambda"]),
-        eval_metric=str(xgb_cfg.get("eval_metric", "logloss")),
-        objective="binary:logistic",
-        random_state=int(seed),
-        n_jobs=1,
-        tree_method="hist",
-        scale_pos_weight=scale_pos_weight,
-        early_stopping_rounds=int(xgb_cfg.get("early_stopping_rounds", 30)),
-    )
-    model.fit(
-        X_train_enc,
-        y_train,
-        eval_set=[(X_val_enc, y_val)],
-        verbose=False,
-    )
-
-    y_proba = model.predict_proba(X_val_enc)[:, 1]
-    y_pred = (y_proba >= 0.5).astype(int)
+    unique_train = np.unique(np.asarray(y_train, dtype=int))
+    if unique_train.size < 2:
+        model: Any = _ConstantProbModel(constant_label=int(unique_train[0]))
+        y_proba = model.predict_proba(X_val_enc)[:, 1]
+        y_pred = model.predict(X_val_enc)
+        importances = np.zeros(len(X_train_enc.columns), dtype=float)
+        best_iteration = -1
+    else:
+        model = XGBClassifier(
+            n_estimators=int(xgb_cfg["n_estimators"]),
+            max_depth=int(xgb_cfg["max_depth"]),
+            learning_rate=float(xgb_cfg["learning_rate"]),
+            subsample=float(xgb_cfg["subsample"]),
+            colsample_bytree=float(xgb_cfg["colsample_bytree"]),
+            reg_lambda=float(xgb_cfg["reg_lambda"]),
+            eval_metric=str(xgb_cfg.get("eval_metric", "logloss")),
+            objective="binary:logistic",
+            random_state=int(seed),
+            n_jobs=1,
+            tree_method="hist",
+            scale_pos_weight=scale_pos_weight,
+            early_stopping_rounds=int(xgb_cfg.get("early_stopping_rounds", 30)),
+        )
+        model.fit(
+            X_train_enc,
+            y_train,
+            eval_set=[(X_val_enc, y_val)],
+            verbose=False,
+        )
+        y_proba = model.predict_proba(X_val_enc)[:, 1]
+        y_pred = (y_proba >= 0.5).astype(int)
+        importances = np.asarray(model.feature_importances_, dtype=float)
+        best_iteration = int(getattr(model, "best_iteration", -1)) if getattr(model, "best_iteration", None) is not None else -1
     if len(np.unique(np.asarray(y_val))) < 2:
         roc_auc = float("nan")
     else:
@@ -107,7 +134,6 @@ def train_local_xgb(
             roc_auc = float(roc_auc_score(y_val, y_proba))
         except Exception:
             roc_auc = float("nan")
-    importances = np.asarray(model.feature_importances_, dtype=float)
     raw_importance_vector = _aggregate_feature_importance_by_raw(
         encoded_columns=list(X_train_enc.columns),
         importances=importances,
@@ -123,7 +149,7 @@ def train_local_xgb(
         "scale_pos_weight": float(scale_pos_weight),
         "feature_importance_vector": raw_importance_vector,
         "feature_importance_feature_order": list(raw_feature_order),
-        "best_iteration": int(getattr(model, "best_iteration", -1)) if getattr(model, "best_iteration", None) is not None else -1,
+        "best_iteration": best_iteration,
         "rows_train": int(len(X_train)),
         "rows_val": int(len(X_val)),
     }

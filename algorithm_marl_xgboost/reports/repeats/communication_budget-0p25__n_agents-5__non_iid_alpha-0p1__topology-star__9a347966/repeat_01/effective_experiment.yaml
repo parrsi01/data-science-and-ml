@@ -1,0 +1,51 @@
+data:
+  source: UNSW_NB15_or_synthetic
+  seed: 1001
+  n_agents: 5
+  non_iid_alpha: 0.1
+  focus_labels:
+  - normal
+  - anomaly
+  per_agent_smote: true
+  min_pos_per_agent: 8
+  n_samples: 700
+  n_numeric_features: 10
+  anomaly_rate: 0.12
+  train_val_split: 0.8
+marl:
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay: 0.98
+  neighbor_selection: adaptive
+  communication_budget: 0.25
+xgboost:
+  n_estimators: 60
+  max_depth: 4
+  learning_rate: 0.05
+  subsample: 0.9
+  colsample_bytree: 0.9
+  reg_lambda: 1.0
+  eval_metric: logloss
+  early_stopping_rounds: 10
+training:
+  rounds: 2
+  topology: star
+  random_graph_p: 0.25
+  trust_aggregation: true
+metrics:
+  report_per_round: true
+  save_png_per_round: true
+  save_txt_per_round: true
+traffic_energy:
+  measure_bandwidth: true
+  measure_latency: true
+  measure_packet_loss: true
+  simulate_energy: true
+artifacts:
+  out_dir: algorithm_marl_xgboost/reports/repeats/communication_budget-0p25__n_agents-5__non_iid_alpha-0p1__topology-star__9a347966/repeat_01/reports
+  model_dir: algorithm_marl_xgboost/reports/repeats/communication_budget-0p25__n_agents-5__non_iid_alpha-0p1__topology-star__9a347966/repeat_01/models
+  log_path: algorithm_marl_xgboost/reports/repeats/communication_budget-0p25__n_agents-5__non_iid_alpha-0p1__topology-star__9a347966/repeat_01/logs/experiment.jsonl
+meta:
+  author: Simon Parris
+  date: '2026-02-22'
+  purpose: Decentralized federated anomaly detection via MARL + XGBoost

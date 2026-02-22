@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all eval-suite eval-clean project-humanitarian project-humanitarian-clean project-air-traffic project-air-traffic-clean project-ops-system project-ops-dashboard project-ops-clean test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all eval-suite eval-clean project-humanitarian project-humanitarian-clean project-air-traffic project-air-traffic-clean project-ops-system project-ops-dashboard project-ops-clean algo-run algo-study algo-plots algo-report algo-all test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -91,6 +91,21 @@ project-ops-dashboard:
 
 project-ops-clean:
 	rm -rf reports/projects/ops_anomaly_system models/ops_anomaly_system
+
+algo-run:
+	$(PY) -m algorithm_marl_xgboost.src.run_experiment --config algorithm_marl_xgboost/configs/experiment.yaml
+
+algo-study:
+	$(PY) -m algorithm_marl_xgboost.src.experiments.parameter_study --config algorithm_marl_xgboost/configs/parameter_study.yaml
+
+algo-plots:
+	$(PY) -m algorithm_marl_xgboost.src.experiments.plotting
+
+algo-report:
+	$(PY) -m algorithm_marl_xgboost.src.experiments.reporting
+
+algo-all: algo-study
+	$(PY) -m pytest -q algorithm_marl_xgboost/tests/test_algorithm.py algorithm_marl_xgboost/tests/test_experiments.py
 
 lint:
 	$(VENV)/bin/flake8 src tests

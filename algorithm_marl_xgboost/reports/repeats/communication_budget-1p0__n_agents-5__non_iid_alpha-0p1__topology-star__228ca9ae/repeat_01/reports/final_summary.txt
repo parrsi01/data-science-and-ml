@@ -1,0 +1,24 @@
+Decentralized Federated Anomaly Detection via MARL + XGBoost
+Rounds: 2
+Agents: 5
+Topology: star
+
+Final MARL Metrics
+Accuracy: 0.9984
+Precision: 1.0000
+Recall: 0.9000
+F1: 0.9333
+ROC-AUC: 0.9492
+
+Baselines
+- local_only_xgboost: F1=0.8000, Precision=0.8000, Recall=0.8000
+- naive_decentralized_uniform: F1=1.0000, Precision=1.0000, Recall=1.0000
+
+Artifacts
+- jsonl_log: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/logs/experiment.jsonl
+- quality_snapshot_json: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/reports/data_quality_snapshot.json
+- partition_drift_snapshot_json: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/reports/partition_drift_snapshot.json
+- traffic_metrics_per_round_csv: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/reports/traffic_metrics_per_round.csv
+- traffic_metrics_average_png: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/reports/traffic_metrics_average.png
+- performance_comparison_boxplot_png: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/reports/performance_comparison_boxplot.png
+- baseline_results_json: algorithm_marl_xgboost/reports/repeats/communication_budget-1p0__n_agents-5__non_iid_alpha-0p1__topology-star__228ca9ae/repeat_01/reports/baseline_results.json

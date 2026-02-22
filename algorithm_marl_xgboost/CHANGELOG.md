@@ -29,3 +29,29 @@
 - MARL reward dynamics are simplified (feature-importance update abstraction rather than parameter-sharing/gradient exchange).
 - Synthetic data is a controllable proxy and not a substitute for validated institutional datasets (e.g., UNSW-NB15 preprocessing pipeline).
 
+## 2026-02-22 — Parameter study harness, repeats, plotting, and significance testing
+
+### 1) What changed
+
+- Added `src/experiments/` harness modules for repeated runs, parameter studies, significance testing, plotting, and summary report generation.
+- Added `configs/parameter_study.yaml` for institutional-style parameter sweeps and repeat settings.
+- Added experiment docs and cheatsheet for running/rebuilding studies offline.
+- Added lightweight tests for parameter grid generation, significance testing, and plotting artifact creation.
+
+### 2) What reused
+
+- Reused `algorithm_marl_xgboost/src/run_experiment.py` as the core execution engine for each repeat.
+- Reused existing artifact/report formats from Prompt 14 runs and baseline outputs.
+- Reused SciPy/Matplotlib already present in the lab stack.
+
+### 3) What was intentionally left untouched
+
+- Core MARL+XGBoost training/aggregation logic in `algorithm_marl_xgboost/src/` (only wrapped, not replaced).
+- Existing Prompt 14 reports and logs (parameter-study outputs are written to separate directories).
+- Unrelated repository modules and existing scaling report local changes.
+
+### 4) Risks introduced
+
+- Full grid (`144` settings x `10` repeats) is computationally expensive; accidental full runs may take a long time.
+- Statistical comparisons can be misread if repeat counts are too small or study slices are selectively reported.
+- Quick/demo mode changes runtime settings and should not be treated as final research evidence.

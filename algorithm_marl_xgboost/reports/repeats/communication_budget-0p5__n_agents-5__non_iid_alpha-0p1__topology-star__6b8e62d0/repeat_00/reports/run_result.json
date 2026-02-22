@@ -1,0 +1,648 @@
+{
+  "config": {
+    "data": {
+      "source": "UNSW_NB15_or_synthetic",
+      "seed": 1000,
+      "n_agents": 5,
+      "non_iid_alpha": 0.1,
+      "focus_labels": [
+        "normal",
+        "anomaly"
+      ],
+      "per_agent_smote": true,
+      "min_pos_per_agent": 8,
+      "n_samples": 700,
+      "n_numeric_features": 10,
+      "anomaly_rate": 0.12,
+      "train_val_split": 0.8
+    },
+    "marl": {
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.05,
+      "epsilon_decay": 0.98,
+      "neighbor_selection": "adaptive",
+      "communication_budget": 0.5
+    },
+    "xgboost": {
+      "n_estimators": 60,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9,
+      "reg_lambda": 1.0,
+      "eval_metric": "logloss",
+      "early_stopping_rounds": 10
+    },
+    "training": {
+      "rounds": 2,
+      "topology": "star",
+      "random_graph_p": 0.25,
+      "trust_aggregation": true
+    },
+    "metrics": {
+      "report_per_round": true,
+      "save_png_per_round": true,
+      "save_txt_per_round": true
+    },
+    "traffic_energy": {
+      "measure_bandwidth": true,
+      "measure_latency": true,
+      "measure_packet_loss": true,
+      "simulate_energy": true
+    },
+    "artifacts": {
+      "out_dir": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports",
+      "model_dir": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/models",
+      "log_path": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/logs/experiment.jsonl"
+    },
+    "meta": {
+      "author": "Simon Parris",
+      "date": "2026-02-22",
+      "purpose": "Decentralized federated anomaly detection via MARL + XGBoost"
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "aggregate_metrics": {
+        "accuracy": 0.9336559139784946,
+        "precision": 0.869047619047619,
+        "recall": 0.82,
+        "f1": 0.8246376811594203,
+        "roc_auc": 0.8070028011204481
+      },
+      "traffic_metrics": {
+        "bytes_sent_total": 1392.0,
+        "avg_latency_ms": 15.419476170213326,
+        "packet_loss_mean": 0.026542879746779623,
+        "energy_total": 21.070006948955815,
+        "n_events": 5.0
+      },
+      "agent_metrics": {
+        "0": {
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "roc_auc": NaN,
+          "positive_rate_val": 1.0,
+          "scale_pos_weight": 0.16666666666666666,
+          "feature_importance_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": -1,
+          "rows_train": 6,
+          "rows_val": 2
+        },
+        "1": {
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "roc_auc": NaN,
+          "positive_rate_val": 1.0,
+          "scale_pos_weight": 0.16666666666666666,
+          "feature_importance_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": -1,
+          "rows_train": 6,
+          "rows_val": 2
+        },
+        "2": {
+          "accuracy": 0.9166666666666666,
+          "precision": 0.9166666666666666,
+          "recall": 1.0,
+          "f1": 0.9565217391304348,
+          "roc_auc": 0.5,
+          "positive_rate_val": 0.9166666666666666,
+          "scale_pos_weight": 0.023255813953488372,
+          "feature_importance_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": 0,
+          "rows_train": 44,
+          "rows_val": 12
+        },
+        "3": {
+          "accuracy": 0.9516129032258065,
+          "precision": 0.42857142857142855,
+          "recall": 0.6,
+          "f1": 0.5,
+          "roc_auc": 0.9210084033613445,
+          "positive_rate_val": 0.04032258064516129,
+          "scale_pos_weight": 1.0,
+          "feature_importance_vector": [
+            0.14474089443683624,
+            0.15615327656269073,
+            0.05272790417075157,
+            0.06499899923801422,
+            0.049346596002578735,
+            0.03544656187295914,
+            0.05839664116501808,
+            0.056167230010032654,
+            0.03636590391397476,
+            0.021170606836676598,
+            0.08655468747019768,
+            0.08554036263376474,
+            0.08621453493833542
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": 59,
+          "rows_train": 956,
+          "rows_val": 124
+        },
+        "4": {
+          "accuracy": 0.8,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "roc_auc": 1.0,
+          "positive_rate_val": 0.4,
+          "scale_pos_weight": 1.0,
+          "feature_importance_vector": [
+            0.4147469997406006,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.3825632333755493,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": 41,
+          "rows_train": 28,
+          "rows_val": 5
+        }
+      },
+      "agent_rewards": {
+        "0": {
+          "reward": -0.018031865922396556,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.0169921875,
+          "energy_penalty": 0.0010396784223965557
+        },
+        "1": {
+          "reward": -0.00932840372266684,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.0008323099726668409
+        },
+        "2": {
+          "reward": -0.013116955318150764,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.004620861568150765
+        },
+        "3": {
+          "reward": -0.10431768054849172,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.09582158679849172
+        },
+        "4": {
+          "reward": -0.011531691733073206,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.003035597983073208
+        }
+      },
+      "agent_epsilons": {
+        "0": 0.98,
+        "1": 0.98,
+        "2": 0.98,
+        "3": 0.98,
+        "4": 0.98
+      }
+    },
+    {
+      "round": 2,
+      "aggregate_metrics": {
+        "accuracy": 0.9320430107526881,
+        "precision": 0.8583333333333332,
+        "recall": 0.82,
+        "f1": 0.8169453734671126,
+        "roc_auc": 0.8114845938375351
+      },
+      "traffic_metrics": {
+        "bytes_sent_total": 1392.0,
+        "avg_latency_ms": 15.613292194376376,
+        "packet_loss_mean": 0.02771552667380281,
+        "energy_total": 21.070825603858975,
+        "n_events": 5.0
+      },
+      "agent_metrics": {
+        "0": {
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "roc_auc": NaN,
+          "positive_rate_val": 1.0,
+          "scale_pos_weight": 0.16666666666666666,
+          "feature_importance_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": -1,
+          "rows_train": 6,
+          "rows_val": 2
+        },
+        "1": {
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "roc_auc": NaN,
+          "positive_rate_val": 1.0,
+          "scale_pos_weight": 0.16666666666666666,
+          "feature_importance_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": -1,
+          "rows_train": 6,
+          "rows_val": 2
+        },
+        "2": {
+          "accuracy": 0.9166666666666666,
+          "precision": 0.9166666666666666,
+          "recall": 1.0,
+          "f1": 0.9565217391304348,
+          "roc_auc": 0.5,
+          "positive_rate_val": 0.9166666666666666,
+          "scale_pos_weight": 0.023255813953488372,
+          "feature_importance_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": 0,
+          "rows_train": 44,
+          "rows_val": 12
+        },
+        "3": {
+          "accuracy": 0.9435483870967742,
+          "precision": 0.375,
+          "recall": 0.6,
+          "f1": 0.46153846153846156,
+          "roc_auc": 0.934453781512605,
+          "positive_rate_val": 0.04032258064516129,
+          "scale_pos_weight": 1.0,
+          "feature_importance_vector": [
+            0.16229598224163055,
+            0.15655672550201416,
+            0.05067151412367821,
+            0.06896720826625824,
+            0.05931153893470764,
+            0.036774832755327225,
+            0.06500658392906189,
+            0.05813407897949219,
+            0.040160950273275375,
+            0.0267211701720953,
+            0.07002774067223072,
+            0.07991496846079826,
+            0.06974440906196833
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": 59,
+          "rows_train": 956,
+          "rows_val": 124
+        },
+        "4": {
+          "accuracy": 0.8,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "roc_auc": 1.0,
+          "positive_rate_val": 0.4,
+          "scale_pos_weight": 1.0,
+          "feature_importance_vector": [
+            0.43486952781677246,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.21210722625255585,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "feature_importance_feature_order": [
+            "f00",
+            "f01",
+            "f02",
+            "f03",
+            "f04",
+            "f05",
+            "f06",
+            "f07",
+            "f08",
+            "f09",
+            "proto",
+            "service",
+            "segment"
+          ],
+          "best_iteration": 40,
+          "rows_train": 28,
+          "rows_val": 5
+        }
+      },
+      "agent_rewards": {
+        "0": {
+          "reward": -0.01802344981728755,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.0169921875,
+          "energy_penalty": 0.0010312623172875524
+        },
+        "1": {
+          "reward": -0.009332682652634636,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.0008365889026346373
+        },
+        "2": {
+          "reward": -0.013129724877715057,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.004633631127715058
+        },
+        "3": {
+          "reward": -0.14278238575618007,
+          "f1_improvement": -0.038461538461538436,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.09582475354464165
+        },
+        "4": {
+          "reward": -0.011523985877015976,
+          "f1_improvement": 0.0,
+          "communication_penalty": 0.00849609375,
+          "energy_penalty": 0.003027892127015976
+        }
+      },
+      "agent_epsilons": {
+        "0": 0.9603999999999999,
+        "1": 0.9603999999999999,
+        "2": 0.9603999999999999,
+        "3": 0.9603999999999999,
+        "4": 0.9603999999999999
+      }
+    }
+  ],
+  "baselines": [
+    {
+      "name": "local_only_xgboost",
+      "metrics": {
+        "accuracy": 0.9304301075268817,
+        "precision": 0.8404761904761905,
+        "recall": 0.78,
+        "f1": 0.7913043478260869,
+        "roc_auc": NaN
+      },
+      "traffic": {
+        "bytes_sent_total": 0.0,
+        "avg_latency_ms": 0.0,
+        "packet_loss_mean": 0.0,
+        "energy_total": 0.0,
+        "n_events": 0.0
+      }
+    },
+    {
+      "name": "naive_decentralized_uniform",
+      "metrics": {
+        "accuracy": 0.9704301075268816,
+        "precision": 0.85,
+        "recall": 0.9199999999999999,
+        "f1": 0.8770186335403725,
+        "roc_auc": NaN
+      },
+      "traffic": {
+        "bytes_sent_total": 832.0,
+        "avg_latency_ms": 11.240627298651852,
+        "packet_loss_mean": 0.009365639229457799,
+        "energy_total": 14.58254313037937,
+        "n_events": 5.0
+      }
+    }
+  ],
+  "artifacts": {
+    "jsonl_log": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/logs/experiment.jsonl",
+    "quality_snapshot_json": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/data_quality_snapshot.json",
+    "partition_drift_snapshot_json": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/partition_drift_snapshot.json",
+    "traffic_metrics_per_round_csv": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/traffic_metrics_per_round.csv",
+    "traffic_metrics_average_png": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/traffic_metrics_average.png",
+    "performance_comparison_boxplot_png": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/performance_comparison_boxplot.png",
+    "baseline_results_json": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/baseline_results.json",
+    "final_summary_txt": "algorithm_marl_xgboost/reports/repeats/communication_budget-0p5__n_agents-5__non_iid_alpha-0p1__topology-star__6b8e62d0/repeat_00/reports/final_summary.txt"
+  }
+}

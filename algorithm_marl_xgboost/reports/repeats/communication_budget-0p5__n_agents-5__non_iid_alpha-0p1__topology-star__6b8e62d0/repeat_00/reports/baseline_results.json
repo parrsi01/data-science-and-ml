@@ -1,0 +1,36 @@
+[
+  {
+    "name": "local_only_xgboost",
+    "metrics": {
+      "accuracy": 0.9304301075268817,
+      "precision": 0.8404761904761905,
+      "recall": 0.78,
+      "f1": 0.7913043478260869,
+      "roc_auc": NaN
+    },
+    "traffic": {
+      "bytes_sent_total": 0.0,
+      "avg_latency_ms": 0.0,
+      "packet_loss_mean": 0.0,
+      "energy_total": 0.0,
+      "n_events": 0.0
+    }
+  },
+  {
+    "name": "naive_decentralized_uniform",
+    "metrics": {
+      "accuracy": 0.9704301075268816,
+      "precision": 0.85,
+      "recall": 0.9199999999999999,
+      "f1": 0.8770186335403725,
+      "roc_auc": NaN
+    },
+    "traffic": {
+      "bytes_sent_total": 832.0,
+      "avg_latency_ms": 11.240627298651852,
+      "packet_loss_mean": 0.009365639229457799,
+      "energy_total": 14.58254313037937,
+      "n_events": 5.0
+    }
+  }
+]

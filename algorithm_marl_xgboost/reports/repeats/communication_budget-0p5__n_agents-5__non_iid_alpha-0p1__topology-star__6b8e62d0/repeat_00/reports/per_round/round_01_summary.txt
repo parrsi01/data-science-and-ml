@@ -1,0 +1,10 @@
+Round 01 Summary
+Accuracy: 0.9337
+Precision: 0.8690
+Recall: 0.8200
+F1: 0.8246
+ROC-AUC: 0.8070
+Bytes Sent Total: 1392.0
+Avg Latency (ms): 15.42
+Packet Loss Mean: 0.0265
+Energy Total (J): 21.070

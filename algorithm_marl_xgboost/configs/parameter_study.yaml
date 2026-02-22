@@ -1,0 +1,28 @@
+meta:
+  author: "Simon Parris"
+  date: "2026-02-22"
+  purpose: "Parameter study for decentralized MARL + XGBoost anomaly detection"
+
+repeats: 10
+rounds: 5
+
+vary:
+  non_iid_alpha: [0.1, 0.3, 0.5, 1.0]
+  n_agents: [5, 10, 20]
+  topology: ["ring", "star", "fully_connected", "random"]
+  communication_budget: [0.25, 0.5, 1.0]
+
+fixed:
+  seed_base: 1000
+  random_graph_p: 0.25
+  per_agent_smote: true
+
+metrics:
+  primary: "f1"
+  secondary: ["accuracy", "precision", "recall", "roc_auc"]
+  traffic: ["bandwidth", "latency", "packet_loss", "energy"]
+
+stats:
+  significance_test: "wilcoxon"
+  alpha: 0.05
+

@@ -1,0 +1,25 @@
+{
+  "config_path": "algorithm_marl_xgboost/configs/parameter_study.yaml",
+  "repeats": 2,
+  "rounds": 2,
+  "n_settings": 6,
+  "artifacts": {
+    "parameter_study_results_csv": "algorithm_marl_xgboost/reports/parameter_study/parameter_study_results.csv",
+    "repeats_all_csv": "algorithm_marl_xgboost/reports/parameter_study/repeats_all.csv",
+    "plots_dir": "algorithm_marl_xgboost/reports/parameter_study/plots",
+    "non_iid_alpha": "algorithm_marl_xgboost/reports/parameter_study/parameter_non_iid_alpha.csv",
+    "n_agents": "algorithm_marl_xgboost/reports/parameter_study/parameter_n_agents.csv",
+    "topology": "algorithm_marl_xgboost/reports/parameter_study/parameter_topology.csv",
+    "communication_budget": "algorithm_marl_xgboost/reports/parameter_study/parameter_comm_budget.csv",
+    "f1_by_topology_boxplot": "algorithm_marl_xgboost/reports/parameter_study/plots/f1_by_topology_boxplot.png",
+    "energy_by_topology_boxplot": "algorithm_marl_xgboost/reports/parameter_study/plots/energy_by_topology_boxplot.png",
+    "bandwidth_by_topology_boxplot": "algorithm_marl_xgboost/reports/parameter_study/plots/bandwidth_by_topology_boxplot.png",
+    "alpha_vs_f1": "algorithm_marl_xgboost/reports/parameter_study/plots/alpha_vs_mean_f1.png",
+    "n_agents_vs_f1": "algorithm_marl_xgboost/reports/parameter_study/plots/n_agents_vs_mean_f1.png",
+    "comm_budget_vs_f1": "algorithm_marl_xgboost/reports/parameter_study/plots/comm_budget_vs_mean_f1.png",
+    "comm_budget_vs_bandwidth": "algorithm_marl_xgboost/reports/parameter_study/plots/comm_budget_vs_bandwidth.png",
+    "executive_summary_md": "algorithm_marl_xgboost/reports/parameter_study/EXECUTIVE_SUMMARY.md",
+    "research_summary_md": "algorithm_marl_xgboost/reports/parameter_study/RESEARCH_SUMMARY.md",
+    "significance_tests_json": "algorithm_marl_xgboost/reports/parameter_study/significance_tests.json"
+  }
+}
