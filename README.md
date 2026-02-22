@@ -79,8 +79,29 @@ The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
 - `make eval-clean`: remove evaluation reports in `reports/evaluation`
 - `make test`: run the pytest suite
 - `make clean`: remove common local test caches
-
 For database usage, create `configs/db.env` from `configs/db.env.example` (do not commit credentials).
+
+## Algorithm: Decentralized MARL + XGBoost (Simon Parris)
+
+Institutional research module for decentralized federated anomaly detection using MARL-guided peer communication and local XGBoost anomaly models.
+
+- Module root: `algorithm_marl_xgboost/`
+- Docs: `algorithm_marl_xgboost/docs/`
+- Config: `algorithm_marl_xgboost/configs/experiment.yaml`
+- Reports: `algorithm_marl_xgboost/reports/`
+
+Run:
+
+```bash
+venv/bin/python -m algorithm_marl_xgboost.src.run_experiment \
+  --config algorithm_marl_xgboost/configs/experiment.yaml
+```
+
+Test (small deterministic run):
+
+```bash
+venv/bin/python -m pytest -q algorithm_marl_xgboost/tests/test_algorithm.py
+```
 
 ## How To Contribute
 

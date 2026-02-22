@@ -414,3 +414,33 @@
 
 - Short definition: A boolean indicator that data drift has exceeded a chosen threshold.
 - Why it matters in UN/IATA/CERN context: Drift flags give operators a simple signal to review model reliability before acting on outputs.
+
+## Federated Learning (decentralized)
+
+- Short definition: A learning setup where multiple participants train locally and exchange updates directly with peers instead of sending all raw data to one central server.
+- Why it matters in UN/IATA/CERN context: Supports cross-site collaboration when data movement is limited by policy, infrastructure, or governance concerns.
+
+## Non-IID
+
+- Short definition: A condition where data distributions differ across nodes, sites, or agents.
+- Why it matters in UN/IATA/CERN context: Real institutional systems often have location-specific patterns, so models must be evaluated under heterogeneous data conditions.
+
+## MARL
+
+- Short definition: Multi-Agent Reinforcement Learning, where multiple agents learn policies based on rewards and interactions.
+- Why it matters in UN/IATA/CERN context: Helps coordinate distributed decisions such as communication, routing, or resource-sharing under constraints.
+
+## Reward
+
+- Short definition: A scalar score used to encourage desired agent behavior (for example, better detection performance with lower communication cost).
+- Why it matters in UN/IATA/CERN context: Reward design determines operational tradeoffs and should be auditable in distributed AI systems.
+
+## Trust-weighted aggregation
+
+- Short definition: Combining peer updates using weights based on each peer's estimated reliability or usefulness.
+- Why it matters in UN/IATA/CERN context: Can reduce the influence of noisy or weak participants in decentralized collaborative systems.
+
+## Topology
+
+- Short definition: The communication graph that defines which agents or nodes can exchange information.
+- Why it matters in UN/IATA/CERN context: Topology affects resilience, bandwidth cost, and coordination speed in distributed operations.

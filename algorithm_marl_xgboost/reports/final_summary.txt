@@ -1,0 +1,24 @@
+Decentralized Federated Anomaly Detection via MARL + XGBoost
+Rounds: 5
+Agents: 10
+Topology: ring
+
+Final MARL Metrics
+Accuracy: 0.8382
+Precision: 0.6962
+Recall: 0.6719
+F1: 0.6745
+ROC-AUC: 0.8434
+
+Baselines
+- local_only_xgboost: F1=0.8198, Precision=0.8868, Recall=0.8037
+- naive_decentralized_uniform: F1=0.8653, Precision=0.9109, Recall=0.8588
+
+Artifacts
+- jsonl_log: algorithm_marl_xgboost/logs/experiment.jsonl
+- quality_snapshot_json: algorithm_marl_xgboost/reports/data_quality_snapshot.json
+- partition_drift_snapshot_json: algorithm_marl_xgboost/reports/partition_drift_snapshot.json
+- traffic_metrics_per_round_csv: algorithm_marl_xgboost/reports/traffic_metrics_per_round.csv
+- traffic_metrics_average_png: algorithm_marl_xgboost/reports/traffic_metrics_average.png
+- performance_comparison_boxplot_png: algorithm_marl_xgboost/reports/performance_comparison_boxplot.png
+- baseline_results_json: algorithm_marl_xgboost/reports/baseline_results.json
