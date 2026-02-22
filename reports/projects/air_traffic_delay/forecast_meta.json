@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "method": "prophet",
+  "notes": "Prophet forecast completed",
+  "horizon_days": 14,
+  "daily_rows": 60,
+  "forecast_rows": 74,
+  "trend_delta_minutes": 1.1521141599907736,
+  "trend_label": "rising",
+  "artifacts": {
+    "forecast_csv": "reports/projects/air_traffic_delay/delay_forecast.csv",
+    "forecast_png": "reports/projects/air_traffic_delay/delay_forecast.png"
+  }
+}

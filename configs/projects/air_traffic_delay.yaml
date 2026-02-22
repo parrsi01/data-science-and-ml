@@ -1,0 +1,22 @@
+simulation:
+  seed: 42
+  n_airports: 25
+  n_routes: 80
+  n_days: 60
+  flights_per_day: 1200
+
+delay_definition:
+  delay_threshold_minutes: 15
+
+modeling:
+  task: "classification"
+  model: "xgboost"
+  test_size: 0.2
+
+forecasting:
+  enabled: true
+  horizon_days: 14
+
+artifacts:
+  output_dir: "reports/projects/air_traffic_delay"
+

@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all eval-suite eval-clean project-humanitarian project-humanitarian-clean test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all eval-suite eval-clean project-humanitarian project-humanitarian-clean project-air-traffic project-air-traffic-clean test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -76,6 +76,12 @@ project-humanitarian:
 
 project-humanitarian-clean:
 	rm -rf reports/projects/humanitarian_optimization datasets/humanitarian_demand.csv
+
+project-air-traffic:
+	$(PY) -m src.projects.air_traffic_delay.run_project --config configs/projects/air_traffic_delay.yaml
+
+project-air-traffic-clean:
+	rm -rf reports/projects/air_traffic_delay models/air_traffic_delay datasets/air_traffic_flights.csv datasets/air_traffic_routes.csv
 
 lint:
 	$(VENV)/bin/flake8 src tests

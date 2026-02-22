@@ -34,3 +34,5 @@ optuna
 shap
 pulp
 pyyaml
+networkx
+prophet

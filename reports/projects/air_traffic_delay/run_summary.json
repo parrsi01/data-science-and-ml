@@ -1,0 +1,128 @@
+{
+  "config_path": "configs/projects/air_traffic_delay.yaml",
+  "routes_csv": "datasets/air_traffic_routes.csv",
+  "flights_csv": "datasets/air_traffic_flights.csv",
+  "graph_artifacts": {
+    "graph_metrics_csv": "reports/projects/air_traffic_delay/graph_metrics.csv",
+    "route_graph_png": "reports/projects/air_traffic_delay/route_graph.png"
+  },
+  "model_result": {
+    "task": "classification",
+    "model": "xgboost",
+    "metrics": {
+      "accuracy": 0.6598611111111111,
+      "precision": 0.6717108028583438,
+      "recall": 0.6523336508368486,
+      "f1": 0.6618804362833081,
+      "roc_auc": 0.7166307565475716
+    },
+    "rows": {
+      "total": 72000,
+      "train": 57600,
+      "test": 14400
+    },
+    "top_feature_importance": [
+      {
+        "feature": "numerical__congestion_index",
+        "importance": 0.09468336403369904
+      },
+      {
+        "feature": "numerical__distance_km",
+        "importance": 0.0711984634399414
+      },
+      {
+        "feature": "categorical__dep_A11",
+        "importance": 0.05126542970538139
+      },
+      {
+        "feature": "categorical__dep_A12",
+        "importance": 0.042296960949897766
+      },
+      {
+        "feature": "numerical__arr_in_degree",
+        "importance": 0.029741788282990456
+      },
+      {
+        "feature": "numerical__arr_out_degree",
+        "importance": 0.027937674894928932
+      },
+      {
+        "feature": "categorical__dep_A18",
+        "importance": 0.02467016689479351
+      },
+      {
+        "feature": "categorical__dep_A05",
+        "importance": 0.019770976155996323
+      },
+      {
+        "feature": "numerical__hour_of_day",
+        "importance": 0.01954907923936844
+      },
+      {
+        "feature": "numerical__arr_betweenness_centrality",
+        "importance": 0.017394807189702988
+      },
+      {
+        "feature": "numerical__dep_out_degree",
+        "importance": 0.0173445213586092
+      },
+      {
+        "feature": "numerical__weather_index",
+        "importance": 0.016966141760349274
+      },
+      {
+        "feature": "categorical__arr_A19",
+        "importance": 0.014379876665771008
+      },
+      {
+        "feature": "categorical__dep_A22",
+        "importance": 0.01431201957166195
+      },
+      {
+        "feature": "numerical__dep_pagerank",
+        "importance": 0.01419771183282137
+      }
+    ],
+    "artifacts": {
+      "model_joblib": "models/air_traffic_delay/xgb.joblib",
+      "confusion_matrix_png": "reports/projects/air_traffic_delay/confusion_matrix.png",
+      "roc_curve_png": "reports/projects/air_traffic_delay/roc_curve.png"
+    },
+    "metrics_json": "reports/projects/air_traffic_delay/model_metrics.json"
+  },
+  "forecast_result": {
+    "enabled": true,
+    "method": "prophet",
+    "notes": "Prophet forecast completed",
+    "horizon_days": 14,
+    "daily_rows": 60,
+    "forecast_rows": 74,
+    "trend_delta_minutes": 1.1521141599907736,
+    "trend_label": "rising",
+    "artifacts": {
+      "forecast_csv": "reports/projects/air_traffic_delay/delay_forecast.csv",
+      "forecast_png": "reports/projects/air_traffic_delay/delay_forecast.png",
+      "forecast_meta_json": "reports/projects/air_traffic_delay/forecast_meta.json"
+    }
+  },
+  "reporting_result": {
+    "executive_summary_md": "reports/projects/air_traffic_delay/executive_summary.md",
+    "bottleneck_airports": [
+      "A09",
+      "A04",
+      "A12",
+      "A17",
+      "A19"
+    ],
+    "top_delay_predictors": [
+      "numerical__congestion_index",
+      "numerical__distance_km",
+      "categorical__dep_A11",
+      "categorical__dep_A12",
+      "numerical__arr_in_degree",
+      "numerical__arr_out_degree",
+      "categorical__dep_A18",
+      "categorical__dep_A05"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "task": "classification",
+  "model": "xgboost",
+  "metrics": {
+    "accuracy": 0.6598611111111111,
+    "precision": 0.6717108028583438,
+    "recall": 0.6523336508368486,
+    "f1": 0.6618804362833081,
+    "roc_auc": 0.7166307565475716
+  },
+  "rows": {
+    "total": 72000,
+    "train": 57600,
+    "test": 14400
+  },
+  "top_feature_importance": [
+    {
+      "feature": "numerical__congestion_index",
+      "importance": 0.09468336403369904
+    },
+    {
+      "feature": "numerical__distance_km",
+      "importance": 0.0711984634399414
+    },
+    {
+      "feature": "categorical__dep_A11",
+      "importance": 0.05126542970538139
+    },
+    {
+      "feature": "categorical__dep_A12",
+      "importance": 0.042296960949897766
+    },
+    {
+      "feature": "numerical__arr_in_degree",
+      "importance": 0.029741788282990456
+    },
+    {
+      "feature": "numerical__arr_out_degree",
+      "importance": 0.027937674894928932
+    },
+    {
+      "feature": "categorical__dep_A18",
+      "importance": 0.02467016689479351
+    },
+    {
+      "feature": "categorical__dep_A05",
+      "importance": 0.019770976155996323
+    },
+    {
+      "feature": "numerical__hour_of_day",
+      "importance": 0.01954907923936844
+    },
+    {
+      "feature": "numerical__arr_betweenness_centrality",
+      "importance": 0.017394807189702988
+    },
+    {
+      "feature": "numerical__dep_out_degree",
+      "importance": 0.0173445213586092
+    },
+    {
+      "feature": "numerical__weather_index",
+      "importance": 0.016966141760349274
+    },
+    {
+      "feature": "categorical__arr_A19",
+      "importance": 0.014379876665771008
+    },
+    {
+      "feature": "categorical__dep_A22",
+      "importance": 0.01431201957166195
+    },
+    {
+      "feature": "numerical__dep_pagerank",
+      "importance": 0.01419771183282137
+    }
+  ],
+  "artifacts": {
+    "model_joblib": "models/air_traffic_delay/xgb.joblib",
+    "confusion_matrix_png": "reports/projects/air_traffic_delay/confusion_matrix.png",
+    "roc_curve_png": "reports/projects/air_traffic_delay/roc_curve.png"
+  }
+}

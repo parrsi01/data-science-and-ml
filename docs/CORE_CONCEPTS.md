@@ -339,3 +339,48 @@
 
 - Short definition: A measure used to compare how outcomes are distributed across groups or regions.
 - Why it matters in UN/IATA/CERN context: Supports review of equity and under-service risks in institutional allocation decisions.
+
+## Graph
+
+- Short definition: A structure made of nodes and edges used to represent connections.
+- Why it matters in UN/IATA/CERN context: Helps analyze route networks, system dependencies, and operational flow paths.
+
+## Node
+
+- Short definition: A point in a graph, such as an airport, region, or device.
+- Why it matters in UN/IATA/CERN context: Nodes represent operational entities whose importance and risk can be measured.
+
+## Edge
+
+- Short definition: A connection between two nodes, such as a flight route or data link.
+- Why it matters in UN/IATA/CERN context: Edges capture movement, dependencies, and flow between institutional assets.
+
+## Centrality
+
+- Short definition: A set of measures describing how important a node is within a network.
+- Why it matters in UN/IATA/CERN context: Centrality helps identify bottlenecks, critical hubs, and vulnerability points.
+
+## Betweenness
+
+- Short definition: A centrality measure showing how often a node lies on shortest paths between other nodes.
+- Why it matters in UN/IATA/CERN context: High-betweenness nodes can become congestion or failure bottlenecks.
+
+## PageRank
+
+- Short definition: A centrality measure that scores nodes based on connections from other important nodes.
+- Why it matters in UN/IATA/CERN context: Helps rank influential hubs in transportation and communication networks.
+
+## Forecasting
+
+- Short definition: Estimating future values from historical patterns and assumptions.
+- Why it matters in UN/IATA/CERN context: Supports capacity planning, staffing, and risk mitigation under uncertainty.
+
+## MAE / RMSE
+
+- Short definition: Error metrics for regression; MAE is average absolute error and RMSE penalizes larger errors more heavily.
+- Why it matters in UN/IATA/CERN context: Helps quantify prediction quality for planning models where error magnitude matters.
+
+## Feature Importance
+
+- Short definition: A ranking showing which input variables most influenced a model's predictions.
+- Why it matters in UN/IATA/CERN context: Supports operational interpretation and governance review of predictive systems.
