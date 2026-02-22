@@ -7,7 +7,10 @@ from datetime import datetime
 import logging
 from typing import Any, Iterable
 
-from data_quality.logging_config import get_logger, log_event
+try:  # Supports both `python -m src...` and `PYTHONPATH=src`
+    from src.data_quality.logging_config import get_logger, log_event  # type: ignore[import-not-found]
+except Exception:
+    from data_quality.logging_config import get_logger, log_event
 
 
 LOGGER = get_logger("data_quality.validators")
@@ -147,4 +150,3 @@ def enforce_domain_rules(df: Any, dataset_name: str) -> tuple[Any, Any]:
         _from_records_like(df, valid_records),
         _from_records_like(df, invalid_records),
     )
-

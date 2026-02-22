@@ -1,0 +1,19 @@
+{
+  "rows_processed": 500,
+  "anomaly_rate": 0.034,
+  "drift_flag": false,
+  "quality_pass": true,
+  "data_source": {
+    "source_type": "fallback_local",
+    "source_name": "/home/sp/cyber-course/projects/datascience/datasets/ml_core_synth.csv",
+    "rows_loaded": 500,
+    "reason": "PostgreSQL unavailable or table not accessible",
+    "fallback_error": "(psycopg2.OperationalError) \n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+  },
+  "artifacts": {
+    "quality_snapshot": "reports/projects/ops_anomaly_system/quality_snapshot.json",
+    "anomaly_results_csv": "reports/projects/ops_anomaly_system/anomaly_results.csv",
+    "inference_metrics_json": "reports/projects/ops_anomaly_system/inference_metrics.json",
+    "drift_snapshot_json": "reports/projects/ops_anomaly_system/drift_snapshot.json"
+  }
+}

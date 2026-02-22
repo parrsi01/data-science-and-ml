@@ -1,0 +1,11 @@
+{
+  "rows_scored": 500,
+  "anomaly_rate": 0.034,
+  "threshold": 0.86,
+  "model_path": "models/ml_advanced/xgboost_tuned.joblib",
+  "top_anomalies_count": 10,
+  "artifacts": {
+    "anomaly_results_csv": "reports/projects/ops_anomaly_system/anomaly_results.csv",
+    "top_anomalies_json": "reports/projects/ops_anomaly_system/top_anomalies.json"
+  }
+}

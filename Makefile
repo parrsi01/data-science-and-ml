@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all eval-suite eval-clean project-humanitarian project-humanitarian-clean project-air-traffic project-air-traffic-clean test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean ml-adv-train ml-adv-explain ml-adv-clean ml-adv-all eval-suite eval-clean project-humanitarian project-humanitarian-clean project-air-traffic project-air-traffic-clean project-ops-system project-ops-dashboard project-ops-clean test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -82,6 +82,15 @@ project-air-traffic:
 
 project-air-traffic-clean:
 	rm -rf reports/projects/air_traffic_delay models/air_traffic_delay datasets/air_traffic_flights.csv datasets/air_traffic_routes.csv
+
+project-ops-system:
+	$(PY) -m src.projects.ops_anomaly_system.run_system --config configs/projects/ops_anomaly_system.yaml
+
+project-ops-dashboard:
+	$(PY) -m src.projects.ops_anomaly_system.dashboard --config configs/projects/ops_anomaly_system.yaml
+
+project-ops-clean:
+	rm -rf reports/projects/ops_anomaly_system models/ops_anomaly_system
 
 lint:
 	$(VENV)/bin/flake8 src tests

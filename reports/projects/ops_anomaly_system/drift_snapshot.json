@@ -1,0 +1,107 @@
+{
+  "drift_flag": false,
+  "threshold_ks_stat": 0.1,
+  "max_ks_statistic": 0.034,
+  "max_ks_feature": "rolling_std_a",
+  "reference_rows": 500,
+  "recent_rows": 500,
+  "report": {
+    "numeric": {
+      "metric_a": {
+        "train_mean": 100.08007211724954,
+        "test_mean": 100.11510828128972,
+        "mean_shift": 0.03503616404017862,
+        "train_std": 14.840034811972997,
+        "test_std": 14.756961590741644,
+        "std_shift": -0.08307322123135208,
+        "ks_statistic": 0.01,
+        "ks_pvalue": 0.9999999999999999
+      },
+      "metric_b": {
+        "train_mean": 50.64008918250788,
+        "test_mean": 50.657553017732006,
+        "mean_shift": 0.017463835224127422,
+        "train_std": 8.00066802081251,
+        "test_std": 8.033292822441531,
+        "std_shift": 0.03262480162902115,
+        "ks_statistic": 0.018,
+        "ks_pvalue": 0.999998021140463
+      },
+      "ratio_ab": {
+        "train_mean": 2.028659962396737,
+        "test_mean": 2.026786839100401,
+        "mean_shift": -0.0018731232963360434,
+        "train_std": 0.4419718752938343,
+        "test_std": 0.43772775822872095,
+        "std_shift": -0.004244117065113351,
+        "ks_statistic": 0.012,
+        "ks_pvalue": 0.9999999999999882
+      },
+      "rolling_mean_a": {
+        "train_mean": 100.18924810045463,
+        "test_mean": 100.03704075771977,
+        "mean_shift": -0.1522073427348687,
+        "train_std": 4.52895838188685,
+        "test_std": 4.591505367250222,
+        "std_shift": 0.06254698536337155,
+        "ks_statistic": 0.018,
+        "ks_pvalue": 0.999998021140463
+      },
+      "lag_metric_a": {
+        "train_mean": 100.12314722887295,
+        "test_mean": 100.0889463538014,
+        "mean_shift": -0.0342008750715479,
+        "train_std": 14.872157565333815,
+        "test_std": 14.768065418052327,
+        "std_shift": -0.10409214728148797,
+        "ks_statistic": 0.01,
+        "ks_pvalue": 0.9999999999999999
+      },
+      "rolling_std_a": {
+        "train_mean": 14.410560903561695,
+        "test_mean": 14.261079130390899,
+        "mean_shift": -0.14948177317079647,
+        "train_std": 3.574829652756536,
+        "test_std": 3.632249845747074,
+        "std_shift": 0.0574201929905378,
+        "ks_statistic": 0.034,
+        "ks_pvalue": 0.9351121874342835
+      },
+      "interaction_a_b": {
+        "train_mean": 5075.378540263502,
+        "test_mean": 5080.085161796657,
+        "mean_shift": 4.7066215331551575,
+        "train_std": 1123.946235853565,
+        "test_std": 1136.2426098587378,
+        "std_shift": 12.296374005172765,
+        "ks_statistic": 0.016,
+        "ks_pvalue": 0.9999999628423824
+      }
+    },
+    "categorical": {
+      "category": {
+        "categories": [
+          "aviation",
+          "humanitarian",
+          "scientific",
+          "supply_chain"
+        ],
+        "train_distribution": {
+          "aviation": 0.384,
+          "humanitarian": 0.254,
+          "scientific": 0.206,
+          "supply_chain": 0.156
+        },
+        "test_distribution": {
+          "aviation": 0.384,
+          "humanitarian": 0.254,
+          "scientific": 0.206,
+          "supply_chain": 0.156
+        },
+        "tv_distance": 0.0,
+        "chi_square_statistic": 0.0,
+        "chi_square_pvalue": 1.0
+      }
+    }
+  }
+}

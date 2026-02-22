@@ -36,3 +36,4 @@ pulp
 pyyaml
 networkx
 prophet
+httpx

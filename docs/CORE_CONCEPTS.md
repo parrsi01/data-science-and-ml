@@ -384,3 +384,33 @@
 
 - Short definition: A ranking showing which input variables most influenced a model's predictions.
 - Why it matters in UN/IATA/CERN context: Supports operational interpretation and governance review of predictive systems.
+
+## Operational ML
+
+- Short definition: Using machine learning models inside live or recurring operational workflows.
+- Why it matters in UN/IATA/CERN context: Operational ML must be reliable, monitored, and auditable because it can influence real decisions.
+
+## Monitoring
+
+- Short definition: Continuously checking system health, data quality, and model behavior after deployment.
+- Why it matters in UN/IATA/CERN context: Monitoring helps detect failures early before they affect mission-critical operations.
+
+## Inference
+
+- Short definition: Running a trained model on new data to produce predictions or scores.
+- Why it matters in UN/IATA/CERN context: Inference is where model outputs affect real workflows, so controls and validation matter.
+
+## Health Check
+
+- Short definition: A quick status endpoint or test showing whether a system is running and basic functions are available.
+- Why it matters in UN/IATA/CERN context: Health checks support operational reliability, automated monitoring, and incident response.
+
+## Model Serving
+
+- Short definition: Exposing a trained model so other systems or users can request predictions.
+- Why it matters in UN/IATA/CERN context: Serving requires stable interfaces, monitoring, and governance to operate safely.
+
+## Drift Flag
+
+- Short definition: A boolean indicator that data drift has exceeded a chosen threshold.
+- Why it matters in UN/IATA/CERN context: Drift flags give operators a simple signal to review model reliability before acting on outputs.
