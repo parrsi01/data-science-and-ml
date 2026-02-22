@@ -114,3 +114,33 @@
 
 - Short definition: A distortion that happens when collected data does not fairly represent the real population.
 - Why it matters in UN/IATA/CERN context: Biased samples can produce unsafe, unfair, or scientifically invalid conclusions.
+
+## Schema
+
+- Short definition: The defined structure of a database, including tables, columns, and rules.
+- Why it matters in UN/IATA/CERN context: Shared schema definitions keep operational and scientific data consistent across teams and systems.
+
+## Primary key
+
+- Short definition: A column (or set of columns) that uniquely identifies each row in a table.
+- Why it matters in UN/IATA/CERN context: Unique identifiers are essential for traceability, deduplication, and audit-ready data linking.
+
+## Foreign key
+
+- Short definition: A column that references a primary key in another table to enforce valid relationships.
+- Why it matters in UN/IATA/CERN context: Prevents broken data relationships in multi-table operational and analytical pipelines.
+
+## Index
+
+- Short definition: A database structure that helps queries find rows faster.
+- Why it matters in UN/IATA/CERN context: Improves performance for time-critical dashboards, investigations, and reporting workloads.
+
+## ETL vs ELT
+
+- Short definition: ETL transforms data before loading into storage; ELT loads first, then transforms inside the data platform.
+- Why it matters in UN/IATA/CERN context: Choosing the right pattern affects reproducibility, performance, and governance controls.
+
+## Data validation
+
+- Short definition: Checks that data has the right columns, types, and value ranges before use.
+- Why it matters in UN/IATA/CERN context: Prevents bad records from contaminating mission-critical analysis and decisions.

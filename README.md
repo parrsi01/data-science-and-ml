@@ -53,6 +53,20 @@ or
 make test
 ```
 
+## Data Pipeline Make Targets
+
+The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
+
+- `make venv`: create local virtual environment
+- `make install`: install dependencies from `requirements.in`
+- `make db-init`: run `scripts/sql/001_create_schema.sql` against `DATABASE_URL`
+- `make ingest`: generate and ingest synthetic records into PostgreSQL
+- `make queries`: run institution-style SQL query examples and print outputs
+- `make test`: run the pytest suite
+- `make clean`: remove common local test caches
+
+For database usage, create `configs/db.env` from `configs/db.env.example` (do not commit credentials).
+
 ## How To Contribute
 
 - Create a feature branch from `main`

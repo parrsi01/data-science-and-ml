@@ -10,3 +10,4 @@ __pycache__/
 htmlcov/
 mlruns/
 logs/*.log
+configs/db.env

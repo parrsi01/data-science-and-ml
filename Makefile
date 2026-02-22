@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -17,6 +17,15 @@ freeze:
 
 test:
 	$(PY) -m pytest -q
+
+db-init:
+	PYTHONPATH=src $(PYTHON) -m data_engineering.schema_init
+
+ingest:
+	PYTHONPATH=src $(PYTHON) -m data_engineering.ingest
+
+queries:
+	PYTHONPATH=src $(PYTHON) -m data_engineering.query_examples
 
 lint:
 	$(VENV)/bin/flake8 src tests
