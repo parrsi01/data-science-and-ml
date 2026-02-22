@@ -1,0 +1,32 @@
+PYTHON ?= python3
+VENV ?= venv
+PIP := $(VENV)/bin/pip
+PY := $(VENV)/bin/python
+
+.PHONY: venv install freeze test lint format tree clean
+
+venv:
+	$(PYTHON) -m venv $(VENV)
+	$(PIP) install --upgrade pip
+
+install:
+	$(PIP) install -r requirements.in
+
+freeze:
+	$(PIP) freeze > requirements.txt
+
+test:
+	$(PY) -m pytest -q
+
+lint:
+	$(VENV)/bin/flake8 src tests
+	$(VENV)/bin/mypy src
+
+format:
+	$(VENV)/bin/black src tests
+
+tree:
+	find . -maxdepth 3 -type d | sort
+
+clean:
+	rm -rf .pytest_cache .mypy_cache htmlcov
