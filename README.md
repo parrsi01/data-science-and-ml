@@ -75,6 +75,8 @@ The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
 - `make ml-adv-explain`: rerun advanced training/explainability pipeline (same command path)
 - `make ml-adv-clean`: remove advanced ML artifacts (`models/ml_advanced`, `reports/ml_advanced`)
 - `make ml-adv-all`: run advanced training + explainability + advanced ML tests
+- `make eval-suite`: run institutional evaluation suite (stability, thresholding, group metrics, drift)
+- `make eval-clean`: remove evaluation reports in `reports/evaluation`
 - `make test`: run the pytest suite
 - `make clean`: remove common local test caches
 

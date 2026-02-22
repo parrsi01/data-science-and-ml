@@ -1,0 +1,23 @@
+{
+  "test_metrics": {
+    "accuracy": 0.9865,
+    "precision": 0.6911764705882353,
+    "recall": 0.5875,
+    "f1": 0.6351351351351351,
+    "roc_auc": 0.9866725127551019
+  },
+  "best_threshold": 0.86,
+  "stability_score_f1_std": 0.009118137520032222,
+  "largest_drift_feature": "interaction_a_b",
+  "largest_drift_score": 37.31213680231485,
+  "worst_group_recall": {
+    "group": "supply_chain",
+    "recall": 0.42857142857142855
+  },
+  "artifacts": {
+    "cv_report_json": "reports/evaluation/cv_report.json",
+    "json": "reports/evaluation/stability_seed_sweep.json",
+    "csv": "reports/evaluation/group_metrics.csv",
+    "md": "reports/evaluation/stability_seed_sweep.md"
+  }
+}

@@ -1,9 +1,9 @@
 {
   "dataset_name": "flights",
   "row_counts": {
-    "total": 1000,
-    "valid": 1000,
-    "schema_invalid": 0,
+    "total": 3,
+    "valid": 2,
+    "schema_invalid": 1,
     "domain_invalid": 0
   },
   "missing_rate_per_column": {
@@ -16,32 +16,32 @@
     "passenger_count": 0.0,
     "scheduled_dep": 0.0
   },
-  "duplicate_rate": 0.0,
+  "duplicate_rate": 0.5,
   "outlier_rate_per_numeric_column": {
-    "delay_minutes": 0.005,
-    "fuel_consumption_kg": 0.003,
-    "passenger_count": 0.01
+    "delay_minutes": 0.0,
+    "fuel_consumption_kg": 0.0,
+    "passenger_count": 0.0
   },
-  "schema_violation_rate": 0.0,
+  "schema_violation_rate": 0.3333333333333333,
   "domain_violation_rate": 0.0,
   "drift_snapshot": {
     "delay_minutes": {
-      "mean": 17.857,
-      "std": 12.60044929049446,
-      "min": 0.0,
-      "max": 64.0
+      "mean": 5.0,
+      "std": 0.0,
+      "min": 5.0,
+      "max": 5.0
     },
     "fuel_consumption_kg": {
-      "mean": 6775.98055,
-      "std": 1189.9014312648437,
-      "min": 2977.62,
-      "max": 10390.85
+      "mean": 7200.0,
+      "std": 0.0,
+      "min": 7200.0,
+      "max": 7200.0
     },
     "passenger_count": {
-      "mean": 154.342,
-      "std": 34.745420997309566,
-      "min": 40.0,
-      "max": 256.0
+      "mean": 180.0,
+      "std": 0.0,
+      "min": 180.0,
+      "max": 180.0
     }
   }
 }

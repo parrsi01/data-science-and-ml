@@ -274,3 +274,38 @@
 
 - Short definition: When information from outside the training process improperly influences model training or evaluation.
 - Why it matters in UN/IATA/CERN context: Leakage can make models look stronger than they really are, creating false confidence in decisions.
+
+## Calibration Threshold
+
+- Short definition: The probability cutoff used to convert model scores into final yes/no decisions.
+- Why it matters in UN/IATA/CERN context: Threshold choices affect false positives, false negatives, and operational policy outcomes.
+
+## Stability (Seed Sensitivity)
+
+- Short definition: How much model performance changes when training randomness (seed) changes.
+- Why it matters in UN/IATA/CERN context: Stable models are easier to trust, reproduce, and operate in regulated workflows.
+
+## Bias (Group Metrics)
+
+- Short definition: Uneven performance or error rates across groups when comparing model outcomes.
+- Why it matters in UN/IATA/CERN context: Group-level disparities can create fairness, safety, or governance concerns.
+
+## Drift
+
+- Short definition: A change in data distributions or behavior between training and later evaluation/production data.
+- Why it matters in UN/IATA/CERN context: Drift can silently degrade model reliability in operational and scientific systems.
+
+## KS Test
+
+- Short definition: A statistical test that compares two distributions and measures how different they are.
+- Why it matters in UN/IATA/CERN context: Useful for detecting numeric feature drift between training and evaluation periods.
+
+## Total Variation Distance
+
+- Short definition: A number that measures how different two probability distributions are.
+- Why it matters in UN/IATA/CERN context: Helps quantify categorical drift in a simple, interpretable way.
+
+## Validation Split
+
+- Short definition: A subset of training-era data reserved for model selection and threshold tuning before final test evaluation.
+- Why it matters in UN/IATA/CERN context: Prevents test-set leakage and supports audit-ready model selection decisions.
