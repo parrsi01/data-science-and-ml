@@ -1,0 +1,74 @@
+{
+  "logreg": {
+    "test_metrics": {
+      "accuracy": 0.9535,
+      "precision": 0.29457364341085274,
+      "recall": 0.95,
+      "f1": 0.44970414201183434,
+      "roc_auc": 0.9891900510204082
+    },
+    "confusion_matrix": [
+      [
+        3738,
+        182
+      ],
+      [
+        4,
+        76
+      ]
+    ],
+    "class_weight_info": {
+      "positives": 320.0,
+      "negatives": 15680.0,
+      "scale_pos_weight": 49.0
+    }
+  },
+  "random_forest": {
+    "test_metrics": {
+      "accuracy": 0.98675,
+      "precision": 0.7872340425531915,
+      "recall": 0.4625,
+      "f1": 0.5826771653543307,
+      "roc_auc": 0.9879719387755103
+    },
+    "confusion_matrix": [
+      [
+        3910,
+        10
+      ],
+      [
+        43,
+        37
+      ]
+    ],
+    "class_weight_info": {
+      "positives": 320.0,
+      "negatives": 15680.0,
+      "scale_pos_weight": 49.0
+    }
+  },
+  "xgboost": {
+    "test_metrics": {
+      "accuracy": 0.9805,
+      "precision": 0.5087719298245614,
+      "recall": 0.725,
+      "f1": 0.5979381443298969,
+      "roc_auc": 0.9878252551020408
+    },
+    "confusion_matrix": [
+      [
+        3864,
+        56
+      ],
+      [
+        22,
+        58
+      ]
+    ],
+    "class_weight_info": {
+      "positives": 320.0,
+      "negatives": 15680.0,
+      "scale_pos_weight": 49.0
+    }
+  }
+}

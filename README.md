@@ -68,6 +68,9 @@ The repository includes reproducible PostgreSQL pipeline targets for Prompt 4:
 - `make scale-mp`: run deterministic multiprocessing CSV processing
 - `make scale-dask`: run Dask processing (or offline-safe fallback) and write parquet output
 - `make scale-bench`: run scaling benchmark and write JSON/Markdown reports
+- `make ml-train`: run the config-driven ML training pipeline and save models/metrics/plots
+- `make ml-report`: print top-line ML metrics from `reports/ml_core/metrics.json`
+- `make ml-clean`: remove ML artifacts (`models/ml_core`, `reports/ml_core`)
 - `make test`: run the pytest suite
 - `make clean`: remove common local test caches
 

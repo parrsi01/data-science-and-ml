@@ -1,2 +1,8 @@
 _validation_error,actual_dep,arr_airport,delay_minutes,dep_airport,flight_id,fuel_consumption_kg,passenger_count,scheduled_dep
-dep_airport: min_length=3,2026-01-01 10:55:00,CDG,0,AB,FL002,6500.0,-1,2026-01-01 11:00:00
+"2 validation errors for FlightRow
+dep_airport
+  String should have at least 3 characters [type=string_too_short, input_value='AB', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_short
+passenger_count
+  Input should be greater than or equal to 0 [type=greater_than_equal, input_value=-1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than_equal",2026-01-01 10:55:00,CDG,0,AB,FL002,6500.0,-1,2026-01-01 11:00:00

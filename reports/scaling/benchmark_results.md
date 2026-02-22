@@ -10,9 +10,9 @@
 
 | Method | Wall Time (s) | Output Rows | Backend/Notes |
 |---|---:|---:|---|
-| chunking | 0.002444 | 300 | python-fallback |
-| multiprocessing | 0.001586 | 300 | multiprocessing |
-| dask | 0.000862 | 300 | python-fallback |
+| chunking | 0.010616 | 300 | pandas |
+| multiprocessing | 0.001483 | 300 | multiprocessing |
+| dask | 0.015570 | 300 | dask |
 
 ## Artifacts
 

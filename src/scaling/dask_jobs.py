@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import json
+import shutil
 from typing import Any
 
 try:  # pragma: no cover - optional dependency
@@ -31,6 +32,8 @@ def _write_fallback_parquet_placeholder(rows: list[dict[str, Any]], output_path:
     """Write a deterministic JSON placeholder when Dask/Parquet support is absent."""
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    if output_path.exists() and output_path.is_dir():
+        shutil.rmtree(output_path)
     payload = {
         "format": "fallback-json-records-stored-with-parquet-extension",
         "note": "Dask/Parquet dependencies unavailable; this is a reproducible offline placeholder.",
@@ -63,30 +66,45 @@ def dask_process_csv(
         }
 
     # Dask path (requires dask + pandas + parquet engine like pyarrow/fastparquet).
+    # Use partition-local feature engineering to avoid unsupported global rolling ops.
+    if output_path.exists():
+        if output_path.is_dir():
+            shutil.rmtree(output_path)
+        else:
+            output_path.unlink()
     ddf = dd.read_csv(str(input_csv))
-    ddf["rolling_mean_metric_a"] = ddf["metric_a"].rolling(window=5, min_periods=1).mean()
-    ddf["ratio_a_b"] = ddf["metric_a"] / ddf["metric_b"].clip(lower=0.0001)
-    ddf["anomaly_flag"] = (ddf["ratio_a_b"] > 3.0) | (
-        ddf["metric_a"] > (ddf["rolling_mean_metric_a"] + 30.0)
-    )
+
+    def _partition_features(pdf):
+        processed = add_features(pdf)
+        return processed
+
+    meta = ddf._meta.copy()
+    meta["rolling_mean_metric_a"] = meta["metric_a"].astype("float64")
+    meta["ratio_a_b"] = meta["metric_a"].astype("float64")
+    meta["anomaly_flag"] = False
+    ddf = ddf.map_partitions(_partition_features, meta=meta)
     try:
         ddf.to_parquet(str(output_path), write_index=False, overwrite=True)
         row_count = int(ddf.shape[0].compute())
         method = "dask"
-    except Exception:
+    except Exception as exc:
         # If a parquet engine is missing, store a deterministic placeholder instead.
         rows = [dict(row) for row in ddf.head(1000, compute=True).to_dict(orient="records")]
         _write_fallback_parquet_placeholder(rows, output_path)
         row_count = len(rows)
-        method = "dask-parquet-engine-missing-fallback"
+        method = "dask-fallback"
+        fallback_error = str(exc)
 
-    return {
+    result = {
         "method": method,
         "backend": "dask",
         "output_parquet": str(output_path),
         "row_count": row_count,
         **parquet_vs_csv_explanation(),
     }
+    if method != "dask":
+        result["fallback_error"] = fallback_error
+    return result
 
 
 def main() -> None:

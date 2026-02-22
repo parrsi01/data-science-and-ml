@@ -209,3 +209,43 @@
 
 - Short definition: Measuring runtime and memory usage to find slow or inefficient code.
 - Why it matters in UN/IATA/CERN context: Helps teams tune performance and avoid failures in production and scientific workloads.
+
+## Pipeline
+
+- Short definition: A repeatable sequence of steps that moves data from input through processing to outputs.
+- Why it matters in UN/IATA/CERN context: Pipelines make institutional analytics and AI workflows reproducible, reviewable, and easier to audit.
+
+## Train/Test Split
+
+- Short definition: Dividing data into a training set for learning and a test set for final evaluation.
+- Why it matters in UN/IATA/CERN context: Prevents over-optimistic performance claims in operational and scientific models.
+
+## Stratification
+
+- Short definition: Splitting data while preserving class proportions (for example, rare events) in each subset.
+- Why it matters in UN/IATA/CERN context: Produces more reliable evaluation when important events are uncommon.
+
+## Class Imbalance
+
+- Short definition: A dataset condition where one class is much rarer than another.
+- Why it matters in UN/IATA/CERN context: Rare but critical events can be missed unless models and metrics account for imbalance.
+
+## ROC-AUC
+
+- Short definition: A metric summarizing how well a classifier separates positives from negatives across thresholds.
+- Why it matters in UN/IATA/CERN context: Useful for comparing models in imbalanced risk-detection settings.
+
+## Confusion Matrix
+
+- Short definition: A table showing counts of true/false positives and true/false negatives.
+- Why it matters in UN/IATA/CERN context: Helps teams understand error types, not just overall accuracy.
+
+## Hyperparameter
+
+- Short definition: A model setting chosen before training (for example, tree depth or learning rate).
+- Why it matters in UN/IATA/CERN context: Hyperparameters affect performance, runtime, and stability and should be tracked for reproducibility.
+
+## Artifact
+
+- Short definition: A saved output from a workflow, such as a model file, metrics report, or plot.
+- Why it matters in UN/IATA/CERN context: Artifacts provide traceable evidence for review, deployment, and audits.

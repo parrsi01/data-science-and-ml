@@ -3,7 +3,7 @@ VENV ?= venv
 PIP := $(VENV)/bin/pip
 PY := $(VENV)/bin/python
 
-.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench test lint format tree clean
+.PHONY: venv install freeze db-init ingest queries quality all scale-generate scale-mp scale-dask scale-bench ml-train ml-report ml-clean test lint format tree clean
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -43,6 +43,15 @@ scale-dask:
 
 scale-bench:
 	PYTHONPATH=src $(PYTHON) -m scaling.benchmark
+
+ml-train:
+	$(PY) -m src.ml_core.train --config configs/ml_core/config.yaml
+
+ml-report:
+	PYTHONPATH=src $(PY) -m ml_core.report
+
+ml-clean:
+	rm -rf models/ml_core reports/ml_core
 
 lint:
 	$(VENV)/bin/flake8 src tests

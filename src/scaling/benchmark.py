@@ -26,12 +26,31 @@ def _count_csv_rows(path: str | Path) -> int:
     return len(rows)
 
 
-def _count_parquet_fallback_rows(path: str | Path) -> int:
-    try:
-        payload = json.loads(Path(path).read_text(encoding="utf-8"))
-        return int(payload.get("row_count", 0))
-    except Exception:
+def _count_parquet_rows(path: str | Path) -> int:
+    file_path = Path(path)
+    if not file_path.exists():
         return 0
+    # Fallback placeholder path written as JSON text with .parquet extension.
+    try:
+        payload = json.loads(file_path.read_text(encoding="utf-8"))
+        if isinstance(payload, dict) and "row_count" in payload:
+            return int(payload.get("row_count", 0))
+    except Exception:
+        pass
+
+    # Real parquet row count path.
+    try:
+        import pyarrow.parquet as pq  # type: ignore[import-not-found]
+
+        table = pq.read_table(file_path)
+        return int(table.num_rows)
+    except Exception:
+        try:
+            import pandas as pd  # type: ignore[import-not-found]
+
+            return int(len(pd.read_parquet(file_path)))
+        except Exception:
+            return 0
 
 
 def _system_info() -> dict[str, Any]:
@@ -104,7 +123,7 @@ def run_benchmark(
             },
             "dask": {
                 **dask_bench,
-                "output_row_count": _count_parquet_fallback_rows(dask_out),
+                "output_row_count": _count_parquet_rows(dask_out),
             },
         },
         "artifacts": {
