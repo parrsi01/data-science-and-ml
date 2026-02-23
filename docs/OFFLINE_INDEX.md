@@ -62,3 +62,8 @@ This index is the offline reading map for the entire repository. It is designed 
 - [ ] Run `make algo-run` or `make algo-study` for the MARL + XGBoost section
 - [ ] Review generated artifacts in `reports/` and `algorithm_marl_xgboost/reports/`
 - [ ] Review `docs/REPOSITORY_STATUS_REPORT.md` for limitations and next steps
+
+## Companion Notes (Slow-Learning Add-on)
+
+- `docs/LESSON_EXECUTION_COMPANION.md` - lesson-by-lesson what/why/do/evidence/stop guide
+- `docs/LESSON_RESEARCH_ANALYSIS_COMPANION.md` - beginner definitions + analyst-style reading prompts

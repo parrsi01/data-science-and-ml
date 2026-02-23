@@ -141,3 +141,10 @@ algorithm_marl_xgboost/      Research module, experiments, docs, reports, tests
 ## 10. License (MIT)
 
 This repository is licensed under the MIT License. See `LICENSE`.
+
+## Companion Notes (Slow-Learning, GitHub Mobile Friendly)
+
+- `docs/LESSON_EXECUTION_COMPANION.md` - step-by-step what/why/do/evidence/stop guidance for each module
+- `docs/LESSON_RESEARCH_ANALYSIS_COMPANION.md` - beginner definitions + research-style analysis lens for every module
+
+Use these when coding in a separate terminal and reading on GitHub/iPhone.

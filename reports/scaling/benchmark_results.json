@@ -12,16 +12,16 @@
   "methods": {
     "chunking": {
       "label": "chunking",
-      "wall_time_seconds": 0.012349575001280755,
+      "wall_time_seconds": 0.011745233001420274,
       "memory_before": {
         "backend": "psutil",
-        "rss_bytes": 405757952,
-        "vms_bytes": 2564145152
+        "rss_bytes": 454897664,
+        "vms_bytes": 2992250880
       },
       "memory_after": {
         "backend": "psutil",
-        "rss_bytes": 405790720,
-        "vms_bytes": 2564145152
+        "rss_bytes": 455122944,
+        "vms_bytes": 2993299456
       },
       "result": {
         "backend": "pandas",
@@ -34,20 +34,20 @@
     },
     "multiprocessing": {
       "label": "multiprocessing",
-      "wall_time_seconds": 0.0017559990010340698,
+      "wall_time_seconds": 0.001581925003847573,
       "memory_before": {
         "backend": "psutil",
-        "rss_bytes": 405790720,
-        "vms_bytes": 2564145152
+        "rss_bytes": 455122944,
+        "vms_bytes": 2993299456
       },
       "memory_after": {
         "backend": "psutil",
-        "rss_bytes": 405790720,
-        "vms_bytes": 2564145152
+        "rss_bytes": 455127040,
+        "vms_bytes": 2993299456
       },
       "result": {
         "method": "multiprocessing",
-        "elapsed_seconds": 0.00036420800461200997,
+        "elapsed_seconds": 0.0003404599992791191,
         "rows_processed": 300,
         "workers_used": 1,
         "execution_mode": "sequential-fallback",
@@ -58,16 +58,16 @@
     },
     "dask": {
       "label": "dask",
-      "wall_time_seconds": 0.01673215600021649,
+      "wall_time_seconds": 0.015140169001824688,
       "memory_before": {
         "backend": "psutil",
-        "rss_bytes": 405790720,
-        "vms_bytes": 2564145152
+        "rss_bytes": 455127040,
+        "vms_bytes": 2993299456
       },
       "memory_after": {
         "backend": "psutil",
-        "rss_bytes": 406159360,
-        "vms_bytes": 2564145152
+        "rss_bytes": 455491584,
+        "vms_bytes": 2993299456
       },
       "result": {
         "method": "dask",
